@@ -15,5 +15,6 @@
     <color name="hint">#4D000000</color>
     <color name="notice">#FF0000</color>
     <color name="shadow">#99E1E1E4</color>
+    <color name="btn_follow">#ECECEC</color>
     <color name="background">#F8F8FB</color>
 </resources>

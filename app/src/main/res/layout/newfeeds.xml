@@ -17,7 +17,7 @@
         android:background="@drawable/edit_shadow_cycle_bg"
         android:padding="8dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/logo"
+        android:src="@drawable/img_logo"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
@@ -50,7 +50,7 @@
         android:background="@drawable/edit_shadow_cycle_bg"
         android:padding="8dp"
         android:scaleType="fitCenter"
-        android:src="@drawable/messages"
+        android:src="@drawable/img_messages"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -72,6 +72,23 @@
                 android:id="@+id/storiesBar"/>
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/feedsView"
+        app:layout_constraintTop_toBottomOf="@+id/storiesView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="20dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/newFeeds">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
     
     <LinearLayout
         android:layout_width="64mm"
@@ -94,7 +111,7 @@
             android:layout_marginRight="3mm"
             android:background="@color/blue_app"
             android:scaleType="fitCenter"
-            android:src="@drawable/home" />
+            android:src="@drawable/img_home" />
 
         <ImageButton
             android:id="@+id/btn_book"
@@ -105,7 +122,7 @@
             android:layout_marginRight="4mm"
             android:background="@color/blue_app"
             android:scaleType="fitCenter"
-            android:src="@drawable/book" />
+            android:src="@drawable/img_book" />
 
         <ImageButton
             android:layout_width="48dp"
@@ -114,7 +131,7 @@
             android:layout_marginTop="7dp"
             android:layout_marginLeft="4mm"
             android:layout_marginRight="4mm"
-            android:src="@drawable/event"
+            android:src="@drawable/img_event"
             android:scaleType="fitCenter"
             android:background="@color/blue_app"/>
 
@@ -126,7 +143,7 @@
             android:layout_marginTop="7dp"
             android:background="@color/blue_app"
             android:scaleType="fitCenter"
-            android:src="@drawable/user" />
+            android:src="@drawable/img_user" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
