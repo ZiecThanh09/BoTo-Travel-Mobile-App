@@ -3,9 +3,11 @@ package com.example.bototravel;
 public class Story {
 
     private boolean seen;
+    private String userName;
 
-    public Story(boolean seen) {
+    public Story(boolean seen, String userName) {
         this.seen = seen;
+        this.userName = userName;
     }
 
     public boolean isSeen() {
@@ -14,5 +16,13 @@ public class Story {
 
     public void setSeen(boolean seen) {
         this.seen = seen;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 }
