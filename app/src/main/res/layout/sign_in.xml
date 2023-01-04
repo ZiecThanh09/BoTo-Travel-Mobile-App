@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/app_name"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="109dp"
+        android:fontFamily="@font/bubblegumsans_regular"
+        android:gravity="center_horizontal"
+        android:text="Boto\nTravel"
+        android:textColor="@color/blue_app"
+        android:textSize="45sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/username"
+        android:layout_marginBottom="30dp"/>
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:background="@drawable/edit_rectangle_bg"
+        android:hint="Username"
+        android:fontFamily="@font/inter_regular"
+        android:paddingStart="10dp"
+        android:textColorHint="@color/hint"
+        android:textSize="16sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/edit_rectangle_bg"
+        android:hint="Password"
+        android:fontFamily="@font/inter_regular"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        android:textColorHint="@color/hint"
+        android:textSize="16sp"
+        android:inputType="textPassword"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/username"
+        android:drawableRight="@drawable/ic_baseline_visibility_off_24"
+        tools:ignore="RtlSymmetry"/>
+
+    <RadioButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/save_pass"
+        android:text="Nhớ mật khẩu"
+        android:fontFamily="@font/inter_medium"
+        android:textSize="13sp"
+        android:textColor="@color/hint"
+        android:checked="true"
+        app:layout_constraintLeft_toLeftOf="@id/password"
+        app:layout_constraintTop_toBottomOf="@id/password"/>
+
+    <TextView
+        android:id="@+id/miss_pass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_medium"
+        android:minHeight="48dp"
+        android:text="Quên mật khẩu?"
+        android:textColor="@color/hint"
+        android:textSize="13sp"
+        app:layout_constraintRight_toRightOf="@id/password"
+        app:layout_constraintTop_toBottomOf="@id/password" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/notice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/miss_pass"
+        android:layout_marginTop="12dp"
+        android:text="Sai tài khoản hoặc mật khẩu!"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="14sp"
+        android:textColor="@color/notice"
+        android:visibility="invisible"/>
+
+    <Button
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:id="@+id/sign_in"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/notice"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/edit_rectangle_bg"
+        app:backgroundTint="@color/blue_app"
+        android:text="Đăng nhập"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="16sp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
