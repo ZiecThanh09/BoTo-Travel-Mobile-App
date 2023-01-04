@@ -67,22 +67,22 @@
         tools:ignore="RtlSymmetry"/>
 
     <RadioButton
+        android:id="@+id/save_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/save_pass"
-        android:text="Nhớ mật khẩu"
-        android:fontFamily="@font/inter_medium"
-        android:textSize="13sp"
-        android:textColor="@color/hint"
         android:checked="true"
+        android:fontFamily="@font/inter_medium"
+        android:minHeight="48dp"
+        android:text="Nhớ mật khẩu"
+        android:textColor="@color/hint"
+        android:textSize="13sp"
         app:layout_constraintLeft_toLeftOf="@id/password"
-        app:layout_constraintTop_toBottomOf="@id/password"/>
+        app:layout_constraintTop_toBottomOf="@id/password" />
 
     <TextView
         android:id="@+id/miss_pass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="14dp"
         android:clickable="true"
         android:focusable="true"
         android:fontFamily="@font/inter_medium"
@@ -90,6 +90,7 @@
         android:text="Quên mật khẩu?"
         android:textColor="@color/hint"
         android:textSize="13sp"
+        android:gravity="center"
         app:layout_constraintRight_toRightOf="@id/password"
         app:layout_constraintTop_toBottomOf="@id/password" />
 
@@ -111,15 +112,13 @@
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:id="@+id/sign_in"
+        android:background="@drawable/edit_rectangle_bg"
+        app:backgroundTint="@color/blue_app"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/notice"
         android:layout_marginTop="30dp"
-        android:background="@drawable/edit_rectangle_bg"
-        app:backgroundTint="@color/blue_app"
         android:text="Đăng nhập"
         android:fontFamily="@font/inter_bold"
         android:textSize="16sp"/>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>
