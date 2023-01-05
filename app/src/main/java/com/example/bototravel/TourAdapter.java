@@ -45,10 +45,10 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
         public TourViewHolder(View itemView) {
             super(itemView);
 
-            tv_id = itemView.findViewById(R.id.tv_id);
-            tv_name = itemView.findViewById(R.id.tv_name);
-            tv_entity = itemView.findViewById(R.id.tv_entity);
-            iv_status = itemView.findViewById(R.id.iv_status);
+            tv_id = itemView.findViewById(R.id.tv_table_id);
+            tv_name = itemView.findViewById(R.id.tv_table_name);
+            tv_entity = itemView.findViewById(R.id.tv_table_entity);
+            iv_status = itemView.findViewById(R.id.iv_table_status);
         }
     }
 }

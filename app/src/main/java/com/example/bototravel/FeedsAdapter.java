@@ -69,7 +69,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedsViewHol
 
             tv_userName = itemView.findViewById(R.id.tv_userName);
             tv_time = itemView.findViewById(R.id.tv_time);
-            tv_status = itemView.findViewById(R.id.tv_status);
+            tv_status = itemView.findViewById(R.id.tv_feed_status);
             tv_likes = itemView.findViewById(R.id.tv_like);
             tv_comments = itemView.findViewById(R.id.tv_comment);
             tv_share = itemView.findViewById(R.id.tv_share);

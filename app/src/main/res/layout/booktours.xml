@@ -118,18 +118,126 @@
         android:paddingBottom="8dp"
         android:paddingEnd="8dp"/>
 
-    <androidx.recyclerview.widget.RecyclerView
+    <TableLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/rcv_tours"
+        android:id="@+id/tl_tours"
         app:layout_constraintBottom_toTopOf="@id/toolBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sn_time"
         android:layout_marginTop="15dp"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
-        android:background="@drawable/edit_item_bg"/>
+        android:paddingTop="15dp"
+        android:background="@drawable/edit_item_bg">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:text="ID"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="14sp"
+                android:textColor="@color/header"
+                android:layout_weight="4"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="30dp"
+                android:text="Tên tour"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="14sp"
+                android:textColor="@color/header"
+                android:layout_weight="4"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:text="Số lượng"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="14sp"
+                android:textColor="@color/header"
+                android:layout_weight="4"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:text="Tình trạng"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="14sp"
+                android:textColor="@color/header"
+                android:layout_weight="4"
+                android:gravity="center"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_table_id"
+                android:text="1"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_border_top_above_item"
+                android:layout_marginTop="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_weight="4"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_table_name"
+                android:text="Vũng Tàu Tour"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_border_top_above_item"
+                android:layout_marginTop="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_weight="4"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_table_entity"
+                android:text="24/30"
+                android:fontFamily="@font/inter_regular"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:background="@drawable/edit_border_top_above_item"
+                android:layout_marginTop="15dp"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:layout_weight="4"
+                android:gravity="center"/>
+
+            <ImageView
+                android:id="@+id/iv_table_status"
+                android:layout_width="30dp"
+                android:layout_height="56dp"
+                android:layout_marginTop="15dp"
+                android:layout_weight="4"
+                android:background="@drawable/edit_border_top_above_item"
+                android:paddingTop="15dp"
+                android:paddingBottom="15dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_accept" />
+
+        </TableRow>
+
+    </TableLayout>
 
     <LinearLayout
         android:layout_width="420dp"

@@ -73,7 +73,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_status"
+        android:id="@+id/tv_feed_status"
         android:layout_below="@id/rel_lay1"
         android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
@@ -87,7 +87,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/imgView_postPic"
-        android:layout_below="@id/tv_status"
+        android:layout_below="@id/tv_feed_status"
         android:layout_marginTop="15dp"
         android:layout_marginStart="9dp"
         android:layout_marginEnd="9dp"
