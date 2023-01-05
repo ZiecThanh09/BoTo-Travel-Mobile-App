@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     private void findViewsByIds() {
         RecyclerView storiesBar = findViewById(R.id.storiesBar);
         RecyclerView newFeeds = findViewById(R.id.newFeeds);
+        RecyclerView toursList = findViewById(R.id.rcv_tours);
 
         // Stories Bar
         List<Story> stories = new ArrayList<>();
@@ -65,5 +66,14 @@ public class MainActivity extends AppCompatActivity {
         newFeeds.setLayoutManager(layoutManager);
 
         feedsAdapter.notifyDataSetChanged();
+
+        // Tours
+        ArrayList<Object> tours = new ArrayList<>();
+        tours.add(new String("ID") + new String("Tên tour") +
+                new String("Số lượng") + new String("Tình trạng"));
+        tours.add(new Tour(1, "Hà Nội Tour", 20, 30, 1));
+        tours.add(new Tour(2, "TP.HCM Tour", 14, 14, 1));
+        tours.add(new Tour(3, "Đà Nẵng Tour", 12, 30, 2));
+        tours.add(new Tour(3, "Đà Lạt Tour", 0, 45, 3));
     }
 }
