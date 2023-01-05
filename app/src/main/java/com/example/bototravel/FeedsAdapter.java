@@ -30,8 +30,7 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedsViewHol
     public FeedsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.row_feeds, parent,
                 false);
-        FeedsViewHolder feedsViewHolder = new FeedsViewHolder(view);
-        return feedsViewHolder;
+        return new FeedsViewHolder(view);
     }
 
     @Override
@@ -47,13 +46,13 @@ public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedsViewHol
 
         if (feed.getTime().equals("Vừa xong")) {
             holder.tv_time.setTextColor(Color.parseColor("#44ADE5"));
-            holder.tv_time.setTypeface(null, Typeface.BOLD);
         }
 
         if (feed.getPostPic() == 0) {
             holder.imgView_postPic.setVisibility(View.GONE);
         } else {
             holder.imgView_postPic.setVisibility(View.VISIBLE);
+            holder.imgView_postPic.setImageResource(feed.getPostPic());
         }
     }
 

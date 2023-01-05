@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Stories Bar
         List<Story> stories = new ArrayList<>();
-        stories.add(new Story(true, "ZiecThanh"));
+        stories.add(new Story(false, "ZiecThanh"));
         stories.add(new Story(true, "Tkien"));
         stories.add(new Story(false, "QHai"));
         stories.add(new Story(true, "MSon"));
@@ -43,21 +43,19 @@ public class MainActivity extends AppCompatActivity {
         storiesBar.setLayoutManager(new LinearLayoutManager(this, RecyclerView.HORIZONTAL,
                 false));
 
-        storiesBar.addItemDecoration(new StoriesDecoration(40));
-
         // New feeds
         ArrayList<Feed> feeds = new ArrayList<>();
         feeds.add(new Feed(1, 900, 14, 9,
                 R.drawable.ic_launcher_foreground, R.drawable.img_status, "ZiecThanh",
                 "1 giờ", "TEST"));
         feeds.add(new Feed(2, 999, 13, 2,
-                R.drawable.ic_launcher_foreground, R.drawable.img_status, "QHai",
+                R.drawable.ic_launcher_foreground, R.drawable.img_status_1, "QHai",
                 "2 giờ", "Test"));
         feeds.add(new Feed(3, 0, 0, 0,
-                R.drawable.ic_launcher_foreground, R.drawable.img_status, "Tkien",
+                R.drawable.ic_launcher_foreground, R.drawable.img_status_2, "Tkien",
                 "1 phút", "test"));
         feeds.add(new Feed(4, 999, 13, 2,
-                R.drawable.ic_launcher_foreground, R.drawable.img_status, "MSon",
+                R.drawable.ic_launcher_foreground, R.drawable.img_status_3, "MSon",
                 "Vừa xong", "tEsT"));
 
         FeedsAdapter feedsAdapter = new FeedsAdapter(this, feeds);
