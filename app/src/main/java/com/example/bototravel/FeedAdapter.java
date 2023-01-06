@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class FeedsAdapter extends RecyclerView.Adapter<FeedsAdapter.FeedsViewHolder> {
+public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedsViewHolder> {
     Context context;
     ArrayList<Feed> feeds;
 
-    public FeedsAdapter(Context context, ArrayList<Feed> feeds) {
+    public FeedAdapter(Context context, ArrayList<Feed> feeds) {
         this.context = context;
         this.feeds = feeds;
     }

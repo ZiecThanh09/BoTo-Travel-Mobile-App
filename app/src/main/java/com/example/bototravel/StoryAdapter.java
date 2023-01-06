@@ -12,12 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class StoriesAdapter extends RecyclerView.Adapter<StoriesAdapter.StoriesViewHolder> {
+public class StoryAdapter extends RecyclerView.Adapter<StoryAdapter.StoriesViewHolder> {
 
     private List<Story> stories;
     private Context context;
 
-    public StoriesAdapter(List<Story> stories, Context context) {
+    public StoryAdapter(List<Story> stories, Context context) {
         this.stories = stories;
         this.context = context;
     }
