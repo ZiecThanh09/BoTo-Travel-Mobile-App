@@ -4,7 +4,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
 
     <ImageButton
         android:id="@+id/imgBtn_logo"
@@ -39,8 +41,6 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
         tools:ignore="RtlSymmetry" />
 
     <ImageButton
@@ -118,7 +118,7 @@
         android:paddingBottom="8dp"
         android:paddingEnd="8dp"/>
 
-    <TableLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:id="@+id/tl_tours"
@@ -128,11 +128,13 @@
         app:layout_constraintTop_toBottomOf="@+id/sn_time"
         android:layout_marginTop="15dp"
         android:paddingTop="15dp"
+        android:paddingBottom="15dp"
         android:background="@drawable/edit_item_bg">
 
-        <TableRow
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:id="@+id/llheader">
 
             <TextView
                 android:layout_width="30dp"
@@ -174,70 +176,15 @@
                 android:layout_weight="4"
                 android:gravity="center"/>
 
-        </TableRow>
+        </LinearLayout>
 
-        <TableRow>
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/rcv_tours"
+            android:layout_below="@+id/llheader"/>
 
-            <TextView
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_table_id"
-                android:text="1"
-                android:fontFamily="@font/inter_regular"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:background="@drawable/edit_border_top_above_item"
-                android:layout_marginTop="15dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:layout_weight="4"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="120dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_table_name"
-                android:text="Vũng Tàu Tour"
-                android:fontFamily="@font/inter_regular"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:background="@drawable/edit_border_top_above_item"
-                android:layout_marginTop="15dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:layout_weight="4"
-                android:gravity="center"/>
-
-            <TextView
-                android:layout_width="70dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_table_entity"
-                android:text="24/30"
-                android:fontFamily="@font/inter_regular"
-                android:textSize="18sp"
-                android:textColor="@color/black"
-                android:background="@drawable/edit_border_top_above_item"
-                android:layout_marginTop="15dp"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:layout_weight="4"
-                android:gravity="center"/>
-
-            <ImageView
-                android:id="@+id/iv_table_status"
-                android:layout_width="30dp"
-                android:layout_height="56dp"
-                android:layout_marginTop="15dp"
-                android:layout_weight="4"
-                android:background="@drawable/edit_border_top_above_item"
-                android:paddingTop="15dp"
-                android:paddingBottom="15dp"
-                android:scaleType="fitCenter"
-                android:src="@drawable/img_accept" />
-
-        </TableRow>
-
-    </TableLayout>
+    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="420dp"

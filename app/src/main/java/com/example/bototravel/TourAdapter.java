@@ -1,6 +1,7 @@
 package com.example.bototravel;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,9 +15,9 @@ import java.util.ArrayList;
 
 public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder>{
     Context context;
-    ArrayList<Object> tours;
+    ArrayList<Tour> tours;
 
-    public TourAdapter(Context context, ArrayList<Object> tours) {
+    public TourAdapter(Context context, ArrayList<Tour> tours) {
         this.context = context;
         this.tours = tours;
     }
@@ -31,7 +32,25 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
 
     @Override
     public void onBindViewHolder(@NonNull TourViewHolder holder, int position) {
-        final Tour tour = (Tour) tours.get(position);
+        final Tour tour = tours.get(position);
+        String entity = tour.getEntity() + "/" + tour.getEntity_total();
+
+        holder.tv_id.setText(String.valueOf(tour.getId()));
+        holder.tv_name.setText(String.valueOf(tour.getName()));
+        holder.tv_entity.setText(entity);
+
+        if (tour.getStatus() == 1) {
+            holder.iv_status.setImageResource(R.drawable.img_accept);
+        } else if (tour.getStatus() == 2) {
+            holder.iv_status.setImageResource(R.drawable.img_deny);
+        } else if (tour.getStatus() == 3) {
+            holder.iv_status.setImageResource(R.drawable.img_approve);
+        }
+
+        if (tour.getEntity() == tour.entity_total) {
+            holder.tv_entity.setText(entity);
+            holder.tv_entity.setTextColor(Color.parseColor("#FF0000"));
+        }
     }
 
     @Override

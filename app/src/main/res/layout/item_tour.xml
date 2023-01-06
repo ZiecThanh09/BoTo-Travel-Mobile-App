@@ -1,6 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_border_top_above_item"
+    android:layout_marginTop="15dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tv_table_id"
+        android:layout_width="35dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:text="1"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_table_name"
+        android:layout_width="125dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:text="Vũng Tàu Tour"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/tv_table_entity"
+        android:layout_width="75dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4"
+        android:fontFamily="@font/inter_regular"
+        android:gravity="center"
+        android:text="24/30"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <ImageView
+        android:id="@+id/iv_table_status"
+        android:layout_width="60dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="4"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_accept" />
+</LinearLayout>
