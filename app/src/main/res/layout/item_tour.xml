@@ -2,8 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/edit_border_top_above_item"
-    android:layout_marginTop="15dp">
+    android:background="@drawable/edit_border_bottom_item"
+    android:paddingBottom="20dp">
 
     <TextView
         android:id="@+id/tv_table_id"

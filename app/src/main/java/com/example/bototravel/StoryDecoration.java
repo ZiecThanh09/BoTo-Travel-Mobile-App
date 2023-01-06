@@ -6,11 +6,11 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class StoriesDecoration extends RecyclerView.ItemDecoration {
+public class StoryDecoration extends RecyclerView.ItemDecoration {
 
     private final int space;
 
-    public StoriesDecoration(int space) {
+    public StoryDecoration(int space) {
         this.space = space;
     }
 

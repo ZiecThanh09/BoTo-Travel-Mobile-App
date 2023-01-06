@@ -5,4 +5,7 @@
         <item name="cornerSize">12dp</item>
         <item name="color">@color/white</item>
     </style>
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
 </resources>

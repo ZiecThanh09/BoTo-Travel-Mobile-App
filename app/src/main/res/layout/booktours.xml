@@ -59,7 +59,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sn_time"
+        android:id="@+id/rellay_time"
         app:layout_constraintTop_toBottomOf="@id/imgBtn_logo"
         app:layout_constraintStart_toStartOf="@id/imgBtn_logo"
         android:layout_marginTop="15dp"
@@ -68,15 +68,16 @@
         <Spinner
             android:layout_width="125dp"
             android:layout_height="30dp"
+            android:id="@+id/sn_time"
             android:spinnerMode="dropdown"/>
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/sn_modeView"
+        android:id="@+id/rellay_modeView"
         app:layout_constraintTop_toBottomOf="@id/et_search"
-        app:layout_constraintStart_toEndOf="@id/sn_time"
+        app:layout_constraintStart_toEndOf="@id/rellay_time"
         android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
         android:background="@drawable/edit_shadow_rectangle_bg">
@@ -84,6 +85,7 @@
         <Spinner
             android:layout_width="125dp"
             android:layout_height="30dp"
+            android:id="@+id/sn_modeView"
             android:spinnerMode="dropdown"/>
     </RelativeLayout>
 
@@ -125,7 +127,7 @@
         app:layout_constraintBottom_toTopOf="@id/toolBar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sn_time"
+        app:layout_constraintTop_toBottomOf="@+id/rellay_time"
         android:layout_marginTop="15dp"
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
@@ -134,7 +136,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/llheader">
+            android:id="@+id/llheader"
+            android:background="@drawable/edit_border_bottom_item"
+            android:paddingBottom="15dp">
 
             <TextView
                 android:layout_width="30dp"
@@ -199,7 +203,7 @@
         tools:ignore="InOrMmUsage">
 
         <ImageButton
-            android:id="@+id/btn_home"
+            android:id="@+id/imgBtn_home"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="7.5mm"
@@ -210,7 +214,7 @@
             android:src="@drawable/img_home" />
 
         <ImageButton
-            android:id="@+id/btn_book"
+            android:id="@+id/imgBtn_book"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="4mm"
@@ -223,7 +227,7 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/btn_event"
+            android:id="@+id/imgBtn_event"
             android:layout_marginTop="6dp"
             android:layout_marginStart="5mm"
             android:layout_marginEnd="4mm"
@@ -232,7 +236,7 @@
             android:background="@color/blue_app"/>
 
         <ImageButton
-            android:id="@+id/btn_user"
+            android:id="@+id/imgBtn_user"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="4mm"

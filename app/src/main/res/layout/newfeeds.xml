@@ -100,7 +100,7 @@
         tools:ignore="InOrMmUsage">
 
         <ImageButton
-            android:id="@+id/btn_home"
+            android:id="@+id/imgBtn_home"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="7.5mm"
@@ -111,7 +111,7 @@
             android:src="@drawable/img_home" />
 
         <ImageButton
-            android:id="@+id/btn_book"
+            android:id="@+id/imgBtn_book"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="4mm"
@@ -124,7 +124,7 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/btn_event"
+            android:id="@+id/imgBtn_event"
             android:layout_marginTop="6dp"
             android:layout_marginStart="5mm"
             android:layout_marginEnd="4mm"
@@ -133,7 +133,7 @@
             android:background="@color/blue_app"/>
 
         <ImageButton
-            android:id="@+id/btn_user"
+            android:id="@+id/imgBtntn_user"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="4mm"
