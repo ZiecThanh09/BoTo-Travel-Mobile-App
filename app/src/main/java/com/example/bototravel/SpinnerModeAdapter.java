@@ -1,20 +1,18 @@
 package com.example.bototravel;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
-public class TableModeAdapter extends BaseAdapter {
+public class SpinnerModeAdapter extends BaseAdapter {
     Context context;
     TableMode[] tableModes;
     LayoutInflater inflater;
 
-    public TableModeAdapter(Context context, TableMode[] tableModes) {
+    public SpinnerModeAdapter(Context context, TableMode[] tableModes) {
         this.context = context;
         this.tableModes = tableModes;
         inflater = (LayoutInflater.from(context));
