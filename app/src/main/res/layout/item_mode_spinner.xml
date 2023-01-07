@@ -6,12 +6,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-<<<<<<< HEAD
-        android:id="@+id/sp_item_text"
-        android:layout_margin="15dp"/>
-=======
-        android:id="@+id/sp_time_text"
+        android:id="@+id/sp_mode_text"
         android:layout_margin="15dp"
         />
->>>>>>> Thành
 </LinearLayout>
