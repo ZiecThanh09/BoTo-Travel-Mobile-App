@@ -1,7 +1,6 @@
 package com.example.bototravel;
 
 import android.annotation.SuppressLint;
-<<<<<<< HEAD
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -11,13 +10,11 @@ import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
-=======
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.ImageButton;
 import android.widget.Spinner;
->>>>>>> Thành
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -32,11 +29,7 @@ public class TourActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         getSupportActionBar().hide();
-<<<<<<< HEAD
-        setContentView(R.layout.booktours);
-=======
         setContentView(R.layout.booktours_table);
->>>>>>> Thành
 
         findViewByIds();
 
@@ -55,10 +48,7 @@ public class TourActivity extends AppCompatActivity {
     @SuppressLint("NotifyDataSetChanged")
     private void findViewByIds() {
         ibFeed = findViewById(R.id.imgBtn_home);
-<<<<<<< HEAD
-=======
         Spinner snMode = findViewById(R.id.sn_modeView);
->>>>>>> Thành
         RecyclerView toursList = findViewById(R.id.rcv_tours);
 
         // Tours
