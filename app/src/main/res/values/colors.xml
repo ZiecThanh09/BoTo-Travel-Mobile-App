@@ -13,7 +13,7 @@
     <color name="blue_app">#44ADE5</color>
     <color name="stroke">#1A000000</color>
     <color name="hint">#4D000000</color>
-    <color name="notice">#FF0000</color>
+    <color name="red">#FF0000</color>
     <color name="shadow">#99E1E1E4</color>
     <color name="btn_follow">#ECECEC</color>
     <color name="header">#D0D2D4</color>

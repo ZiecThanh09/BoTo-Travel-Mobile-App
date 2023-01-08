@@ -1,5 +1,6 @@
 package com.example.bototravel;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -24,6 +25,7 @@ public class FragmentTourTable extends Fragment {
         return inflater.inflate(R.layout.fragment_tour_table, container, false);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -39,7 +41,7 @@ public class FragmentTourTable extends Fragment {
     }
 
     private void dataInitialize() {
-        // Tours
+        // Table Tours
         tours = new ArrayList<>();
         tours.add(new Tour(1, "Hà Nội Tour", 20, 30, 1));
         tours.add(new Tour(2, "TP.HCM Tour", 14, 14, 1));

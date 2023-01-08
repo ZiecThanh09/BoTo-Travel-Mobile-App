@@ -3,11 +3,21 @@ package com.example.bototravel;
 public class Tour {
 
     int id, entity, entity_total, status;
-    String name;
+    String name, start, end;
 
     public Tour(int id, String name, int entity, int entity_total, int status) {
         this.id = id;
         this.name = name;
+        this.entity = entity;
+        this.entity_total = entity_total;
+        this.status = status;
+    }
+
+    public Tour(int id, String name, String start, String end, int entity, int entity_total, int status) {
+        this.id = id;
+        this.name = name;
+        this.start = start;
+        this.end = end;
         this.entity = entity;
         this.entity_total = entity_total;
         this.status = status;
@@ -19,6 +29,22 @@ public class Tour {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getStart() {
+        return start;
+    }
+
+    public void setStart(String start) {
+        this.start = start;
+    }
+
+    public String getEnd() {
+        return end;
+    }
+
+    public void setEnd(String end) {
+        this.end = end;
     }
 
     public int getEntity() {

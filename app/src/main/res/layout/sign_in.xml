@@ -105,7 +105,7 @@
         android:text="Sai tài khoản hoặc mật khẩu!"
         android:fontFamily="@font/inter_regular"
         android:textSize="14sp"
-        android:textColor="@color/notice"
+        android:textColor="@color/red"
         android:visibility="invisible"/>
 
     <Button

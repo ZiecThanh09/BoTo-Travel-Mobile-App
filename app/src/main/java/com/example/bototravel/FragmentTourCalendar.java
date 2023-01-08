@@ -1,5 +1,6 @@
 package com.example.bototravel;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,8 +9,14 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 
 public class FragmentTourCalendar extends Fragment {
+    private RecyclerView toursList;
+    private ArrayList<Tour> tours;
 
     @Nullable
     @Override
@@ -17,14 +24,31 @@ public class FragmentTourCalendar extends Fragment {
         return inflater.inflate(R.layout.fragment_tour_calendar, container, false);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        //dataInitialize();
+        dataInitialize();
 
+        toursList = view.findViewById(R.id.rcv_detailedTours);
+        toursList.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        TourCalendarAdapter tourCalendarAdapter = new TourCalendarAdapter(getContext(), tours);
+        toursList.setAdapter(tourCalendarAdapter);
+        tourCalendarAdapter.notifyDataSetChanged();
     }
 
-
+    private void dataInitialize() {
+        // Calendar Tours
+        tours = new ArrayList<>();
+        tours.add(new Tour(1, "Hà Nội Tour", "TP.HCM", "Hà nội", 14, 30, 1));
+        tours.add(new Tour(2, "Hà Nội Tour", "TP.HCM", "Hà nội", 14, 14, 2));
+        tours.add(new Tour(3, "Hà Nội Tour", "TP.HCM", "Hà nội", 0, 30, 3));
+        tours.add(new Tour(4, "Hà Nội Tour", "TP.HCM", "Hà nội", 14, 30, 1));
+        tours.add(new Tour(5, "Hà Nội Tour", "TP.HCM", "Hà nội", 14, 30, 1));
+        tours.add(new Tour(6, "Hà Nội Tour", "TP.HCM", "Hà nội", 14, 30, 1));
+        tours.add(new Tour(7, "Hà Nội Tour", "TP.HCM", "Hà nội", 14, 30, 1));
+        tours.add(new Tour(8, "Hà Nội Tour", "TP.HCM", "Hà nội", 14, 30, 1));
+    }
 }
