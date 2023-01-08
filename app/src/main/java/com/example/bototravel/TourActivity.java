@@ -1,20 +1,11 @@
 package com.example.bototravel;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
-import android.os.Bundle;
-import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.ImageButton;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,15 +51,9 @@ public class TourActivity extends AppCompatActivity {
         fragmentTourTable = new FragmentTourTable();
 
         // Spinner
-        modeNames = new ArrayList<>();
-        modeNames.add("Bảng");
-        modeNames.add("Lịch");
-
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(
-                TourActivity.this, R.layout.item_mode_spinner, modeNames);
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        snMode.setAdapter(arrayAdapter);
-
+        SpinnerModeAdapter spinnerModeAdapter = new SpinnerModeAdapter(
+                this, TableMode.values());
+        snMode.setAdapter(spinnerModeAdapter);
         snMode.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @SuppressLint("ResourceAsColor")
             @Override
@@ -92,6 +77,7 @@ public class TourActivity extends AppCompatActivity {
 
             }
         });
+
 
 
 

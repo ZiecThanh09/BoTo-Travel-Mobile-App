@@ -1,5 +1,6 @@
 package com.example.bototravel;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,15 +8,15 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class SpinnerModeAdapter extends BaseAdapter {
     Context context;
     TableMode[] tableModes;
-    LayoutInflater inflater;
 
     public SpinnerModeAdapter(Context context, TableMode[] tableModes) {
         this.context = context;
         this.tableModes = tableModes;
-        inflater = (LayoutInflater.from(context));
     }
 
     @Override
@@ -35,13 +36,20 @@ public class SpinnerModeAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        return null;
+        @SuppressLint("ViewHolder") View view = LayoutInflater.from(context)
+                .inflate(R.layout.item_spinner_mode, parent, false);
+
+        TextView tv_mode = view.findViewById(R.id.tv_modeView);
+
+        tv_mode.setText(tableModes[position].getModeName());
+
+        return view;
     }
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        convertView = inflater.inflate(R.layout.item_mode_spinner, null);
-        TextView modeNames = convertView.findViewById(R.id.sp_mode_text);
+        convertView = LayoutInflater.from(context).inflate(R.layout.item_spinner_mode, null);
+        TextView modeNames = convertView.findViewById(R.id.tv_modeView);
         modeNames.setText(tableModes[position].getModeName());
         return convertView;
     }

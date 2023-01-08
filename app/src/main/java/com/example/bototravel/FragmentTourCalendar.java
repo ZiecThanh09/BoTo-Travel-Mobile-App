@@ -33,6 +33,7 @@ public class FragmentTourCalendar extends Fragment {
 
         toursList = view.findViewById(R.id.rcv_detailedTours);
         toursList.setLayoutManager(new LinearLayoutManager(getContext()));
+        toursList.setNestedScrollingEnabled(false);
 
         TourCalendarAdapter tourCalendarAdapter = new TourCalendarAdapter(getContext(), tours);
         toursList.setAdapter(tourCalendarAdapter);
