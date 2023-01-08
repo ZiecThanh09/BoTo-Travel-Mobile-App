@@ -33,9 +33,9 @@ public class FragmentTourTable extends Fragment {
         toursList = view.findViewById(R.id.rcv_tours);
         toursList.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        TourAdapter tourAdapter = new TourAdapter(getContext(), tours);
-        toursList.setAdapter(tourAdapter);
-        tourAdapter.notifyDataSetChanged();
+        TourTableAdapter tourTableAdapter = new TourTableAdapter(getContext(), tours);
+        toursList.setAdapter(tourTableAdapter);
+        tourTableAdapter.notifyDataSetChanged();
     }
 
     private void dataInitialize() {
