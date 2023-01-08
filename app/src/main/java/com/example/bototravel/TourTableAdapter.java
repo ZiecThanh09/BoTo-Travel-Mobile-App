@@ -13,25 +13,25 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder>{
+public class TourTableAdapter extends RecyclerView.Adapter<TourTableAdapter.TourTableViewHolder>{
     Context context;
     ArrayList<Tour> tours;
 
-    public TourAdapter(Context context, ArrayList<Tour> tours) {
+    public TourTableAdapter(Context context, ArrayList<Tour> tours) {
         this.context = context;
         this.tours = tours;
     }
 
     @NonNull
     @Override
-    public TourViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tour, parent,
+    public TourTableViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tour_table, parent,
                 false);
-        return new TourAdapter.TourViewHolder(view);
+        return new TourTableViewHolder(view);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull TourViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull TourTableViewHolder holder, int position) {
         final Tour tour = tours.get(position);
         String entity = tour.getEntity() + "/" + tour.getEntity_total();
 
@@ -58,10 +58,10 @@ public class TourAdapter extends RecyclerView.Adapter<TourAdapter.TourViewHolder
         return tours.size();
     }
 
-    public class TourViewHolder extends RecyclerView.ViewHolder {
+    public static class TourTableViewHolder extends RecyclerView.ViewHolder {
         TextView tv_id, tv_name, tv_entity;
         ImageView iv_status;
-        public TourViewHolder(View itemView) {
+        public TourTableViewHolder(View itemView) {
             super(itemView);
 
             tv_id = itemView.findViewById(R.id.tv_table_id);

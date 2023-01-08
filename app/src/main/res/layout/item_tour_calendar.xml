@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/edit_item_bg"
+    android:paddingTop="15dp"
+    android:paddingStart="15dp"
+    android:paddingBottom="15dp"
+    android:layout_marginBottom="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_calendar_name"
+        android:text="Đà Lạt Tour"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_calendar_id"
+        android:layout_toEndOf="@id/tv_calendar_name"
+        android:layout_marginStart="5dp"
+        android:text="#1"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="20sp"
+        android:textColor="@color/stroke"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_calendar_locationStart"
+        android:layout_below="@+id/tv_calendar_name"
+        android:text="TP.HCM"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="15sp"
+        android:textColor="@color/stroke"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_space"
+        android:layout_below="@id/tv_calendar_name"
+        android:layout_toEndOf="@+id/tv_calendar_locationStart"
+        android:text=" - "
+        android:fontFamily="@font/inter_regular"
+        android:textSize="15sp"
+        android:textColor="@color/stroke"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_calendar_locationEnd"
+        android:layout_below="@id/tv_calendar_name"
+        android:layout_toEndOf="@+id/tv_space"
+        android:text="Đà Lạt"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="15sp"
+        android:textColor="@color/stroke"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_calendar_entityAvailable"
+        android:layout_below="@id/tv_calendar_locationStart"
+        android:text="24"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="15sp"
+        android:textColor="@color/stroke"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_above"
+        android:layout_below="@id/tv_calendar_locationStart"
+        android:layout_toEndOf="@id/tv_calendar_entityAvailable"
+        android:text="/"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="15sp"
+        android:textColor="@color/stroke"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_calendar_entityTotal"
+        android:layout_below="@id/tv_calendar_locationStart"
+        android:layout_toEndOf="@id/tv_above"
+        android:text="30"
+        android:fontFamily="@font/inter_regular"
+        android:textSize="15sp"
+        android:textColor="@color/stroke"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:id="@+id/tv_calendar_status"
+        android:layout_below="@id/tv_calendar_entityAvailable"
+        android:text="Đang mở bán"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="15sp"
+        android:textColor="@color/blue_app"
+        android:gravity="center"/>
+
+    <View
+        android:id="@+id/view_statusTour"
+        android:layout_width="4dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_calendar_name"
+        android:layout_alignBottom="@+id/tv_calendar_status"
+        android:layout_alignParentEnd="true"
+        android:background="@drawable/edit_cycle_bg"
+        android:backgroundTint="@color/blue_app"/>
+
+</RelativeLayout>
