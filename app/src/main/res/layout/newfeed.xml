@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:background="@color/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/sv_feeds"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/toolBar"
+        android:scrollbars="vertical"
+        android:scrollbarThumbVertical="@color/blue_app"
+        android:scrollbarSize="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/conlay_header"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="15dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/storiesView">
+
+                <ImageButton
+                    android:id="@+id/imgBtn_logo"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/edit_shadow_cycle_bg"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_logo"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="MissingConstraints" />
+
+                <EditText
+                    android:id="@+id/et_search"
+                    android:layout_width="230dp"
+                    android:layout_height="55dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/edit_shadow_rectangle_bg"
+                    android:drawableStart="@drawable/ic_baseline_search_24"
+                    android:elevation="4dp"
+                    android:fontFamily="@font/inter_regular"
+                    android:hint="Tìm kiếm trên BoTo"
+                    android:paddingStart="15dp"
+                    android:textColorHint="@color/hint"
+                    android:textSize="15sp"
+                    android:inputType="text"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="InvalidId,RtlSymmetry" />
+
+                <ImageButton
+                    android:id="@+id/imgBtn_messages"
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:background="@drawable/edit_shadow_cycle_bg"
+                    android:padding="8dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/img_messages"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/storiesView"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp"
+                app:layout_constraintTop_toBottomOf="@id/conlay_header"
+                app:layout_constraintBottom_toTopOf="@id/newFeeds">
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/storiesBar"/>
+                </androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/newFeeds"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/storiesView"
+                android:layout_marginTop="15dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="420dp"
+        android:layout_height="80dp"
+        android:id="@+id/toolBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="-28dp"
+        android:background="@drawable/edit_toolbar_bg"
+        android:orientation="horizontal"
+        tools:ignore="InOrMmUsage">
+
+        <ImageButton
+            android:id="@+id/imgBtn_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="7.5mm"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="4mm"
+            android:background="@color/blue_app"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_home" />
+
+        <ImageButton
+            android:id="@+id/imgBtn_book"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4mm"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="4mm"
+            android:background="@color/blue_app"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_book" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/imgBtn_event"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="5mm"
+            android:layout_marginEnd="4mm"
+            android:src="@drawable/img_event"
+            android:scaleType="fitCenter"
+            android:background="@color/blue_app"/>
+
+        <ImageButton
+            android:id="@+id/imgBtntn_user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4mm"
+            android:layout_marginTop="6dp"
+            android:background="@color/blue_app"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_user" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

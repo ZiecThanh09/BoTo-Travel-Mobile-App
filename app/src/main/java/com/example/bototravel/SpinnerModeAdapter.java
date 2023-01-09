@@ -8,8 +8,6 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 public class SpinnerModeAdapter extends BaseAdapter {
     Context context;
     TableMode[] tableModes;
@@ -37,7 +35,7 @@ public class SpinnerModeAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         @SuppressLint("ViewHolder") View view = LayoutInflater.from(context)
-                .inflate(R.layout.item_spinner_mode, parent, false);
+                .inflate(R.layout.tour_item_spinner_mode, parent, false);
 
         TextView tv_mode = view.findViewById(R.id.tv_modeView);
 
@@ -48,7 +46,7 @@ public class SpinnerModeAdapter extends BaseAdapter {
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(context).inflate(R.layout.item_spinner_mode, null);
+        convertView = LayoutInflater.from(context).inflate(R.layout.tour_item_spinner_mode, null);
         TextView modeNames = convertView.findViewById(R.id.tv_modeView);
         modeNames.setText(tableModes[position].getModeName());
         return convertView;

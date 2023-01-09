@@ -21,7 +21,7 @@ public class FragmentTourCalendar extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_tour_calendar, container, false);
+        return inflater.inflate(R.layout.tour_fragment_calendar, container, false);
     }
 
     @SuppressLint("NotifyDataSetChanged")

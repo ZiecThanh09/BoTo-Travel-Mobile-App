@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,7 +12,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class TourActivity extends AppCompatActivity {
@@ -21,7 +19,7 @@ public class TourActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.booktour);
+        setContentView(R.layout.tour);
 
         findViewByIds();
     }
@@ -35,6 +33,7 @@ public class TourActivity extends AppCompatActivity {
         FragmentTourCalendar fragmentTourCalendar;
         Spinner snTime = findViewById(R.id.sn_time);
         Spinner snMode = findViewById(R.id.sn_modeView);
+
         RecyclerView toursList = findViewById(R.id.rcv_tours);
 
         // Animation Button

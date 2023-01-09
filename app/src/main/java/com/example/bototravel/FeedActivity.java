@@ -8,10 +8,6 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 import java.util.ArrayList;
@@ -22,7 +18,7 @@ public class FeedActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.newfeeds);
+        setContentView(R.layout.newfeed);
 
         findViewsByIds();
 
@@ -46,6 +42,7 @@ public class FeedActivity extends AppCompatActivity {
         ibUser = findViewById(R.id.imgBtntn_user);
         RecyclerView storiesBar = findViewById(R.id.storiesBar);
         RecyclerView newFeeds = findViewById(R.id.newFeeds);
+        newFeeds.setNestedScrollingEnabled(false);
 
 
 

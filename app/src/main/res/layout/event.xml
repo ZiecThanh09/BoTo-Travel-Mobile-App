@@ -31,25 +31,20 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="MissingConstraints" />
 
-        <EditText
-            android:id="@+id/et_search"
-            android:layout_width="230dp"
+        <TextView
+            android:layout_width="0dp"
             android:layout_height="55dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:background="@drawable/edit_shadow_rectangle_bg"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:elevation="4dp"
-            android:fontFamily="@font/inter_regular"
-            android:hint="Tìm kiếm trên BoTo"
-            android:paddingStart="15dp"
-            android:textColorHint="@color/hint"
-            android:textSize="15sp"
-            android:inputType="text"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
+            android:id="@+id/tv_tour_title"
+            app:layout_constraintStart_toEndOf="@id/imgBtn_logo"
+            app:layout_constraintEnd_toStartOf="@id/imgBtn_notice"
             app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="InvalidId,RtlSymmetry" />
+            app:layout_constraintBottom_toTopOf="@id/et_search"
+            android:text="TOURS"
+            android:fontFamily="@font/inter_bold"
+            android:textSize="30sp"
+            android:textColor="@color/black"
+            android:gravity="center"/>
+
 
         <ImageButton
             android:id="@+id/imgBtn_notice"
@@ -62,40 +57,61 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <EditText
+            android:id="@+id/et_search"
+            android:layout_width="0dp"
+            android:layout_height="55dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_tour_title"
+            android:background="@drawable/edit_shadow_rectangle_bg"
+            android:drawableStart="@drawable/ic_baseline_search_24"
+            android:elevation="4dp"
+            android:fontFamily="@font/inter_regular"
+            android:hint="Tìm kiếm trên BoTo"
+            android:paddingStart="15dp"
+            android:textColorHint="@color/hint"
+            android:textSize="15sp"
+            android:inputType="text"
+            tools:ignore="InvalidId,RtlSymmetry" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <Spinner
         android:layout_width="125dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:id="@+id/sn_time"
         app:layout_constraintTop_toBottomOf="@id/conlay_header"
         app:layout_constraintStart_toStartOf="@id/conlay_header"
         android:layout_marginTop="15dp"
         android:spinnerMode="dropdown"
         android:background="@drawable/edit_spinner_bg"
-        android:dropDownVerticalOffset="30dp"/>
+        android:dropDownVerticalOffset="40dp"/>
 
     <Spinner
         android:layout_width="125dp"
-        android:layout_height="30dp"
+        android:layout_height="40dp"
         android:id="@+id/sn_modeView"
         app:layout_constraintTop_toBottomOf="@id/conlay_header"
         app:layout_constraintStart_toEndOf="@id/sn_time"
         android:layout_marginTop="15dp"
-        android:layout_marginStart="15dp"
+        android:layout_marginStart="10dp"
         android:spinnerMode="dropdown"
-        android:dropDownVerticalOffset="30dp"
+        android:dropDownVerticalOffset="40dp"
         android:background="@drawable/edit_spinner_bg"
         tools:ignore="RtlSymmetry" />
 
     <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/imgBtn_add"
         app:layout_constraintTop_toBottomOf="@id/conlay_header"
         app:layout_constraintEnd_toStartOf="@id/imgBtn_filter"
         android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/edit_shadow_cycle_bg"
         android:src="@drawable/img_add"
         android:scaleType="fitCenter"
@@ -105,8 +121,8 @@
         android:paddingEnd="8dp"/>
 
     <ImageButton
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:id="@+id/imgBtn_filter"
         app:layout_constraintTop_toBottomOf="@id/conlay_header"
         app:layout_constraintEnd_toEndOf="@id/conlay_header"

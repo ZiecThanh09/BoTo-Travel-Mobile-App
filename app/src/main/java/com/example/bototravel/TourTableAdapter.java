@@ -25,7 +25,7 @@ public class TourTableAdapter extends RecyclerView.Adapter<TourTableAdapter.Tour
     @NonNull
     @Override
     public TourTableViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_tour_table, parent,
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tour_item_table, parent,
                 false);
         return new TourTableViewHolder(view);
     }
