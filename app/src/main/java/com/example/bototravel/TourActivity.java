@@ -1,6 +1,7 @@
 package com.example.bototravel;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -24,17 +25,14 @@ public class TourActivity extends AppCompatActivity {
         findViewByIds();
     }
 
-    private List<String> modeNames;
-
     @SuppressLint("NotifyDataSetChanged")
     private void findViewByIds() {
         ImageButton ibFeed = findViewById(R.id.imgBtn_home);
+        ImageButton ibEvent = findViewById(R.id.imgBtn_event);
         FragmentTourTable fragmentTourTable;
         FragmentTourCalendar fragmentTourCalendar;
         Spinner snTime = findViewById(R.id.sn_time);
         Spinner snMode = findViewById(R.id.sn_modeView);
-
-        RecyclerView toursList = findViewById(R.id.rcv_tours);
 
         // Animation Button
         ibFeed.setOnClickListener(new View.OnClickListener() {
@@ -42,6 +40,14 @@ public class TourActivity extends AppCompatActivity {
             public void onClick(View v) {
                 onBackPressed();
                 // overridePendingTransition(R.anim.anim_move_in_left, R.anim.anim_move_out_right);
+            }
+        });
+
+        ibEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEvent = new Intent(TourActivity.this, EventActivity.class);
+                startActivity(intentEvent);
             }
         });
 
@@ -76,37 +82,6 @@ public class TourActivity extends AppCompatActivity {
 
             }
         });
-
-
-
-
-//        // ViewPager
-//        VPAdapter vpAdapter = new VPAdapter(getSupportFragmentManager(),
-//                FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-//        vpAdapter.addFragment(new FragmentTourTable(), "TOUR TABLE MODE VIEW");
-//        vpAdapter.addFragment(new FragmentTourCalendar(), "TOUR CALENDAR MODE VIEW");
-//        viewPager.setAdapter(vpAdapter);
-
-//        // Tours
-//        ArrayList<Tour> tours = new ArrayList<>();
-//        tours.add(new Tour(1, "Hà Nội Tour", 20, 30, 1));
-//        tours.add(new Tour(2, "TP.HCM Tour", 14, 14, 1));
-//        tours.add(new Tour(3, "Đà Nẵng Tour", 12, 30, 2));
-//        tours.add(new Tour(4, "Đà Lạt Tour", 0, 45, 3));
-//        tours.add(new Tour(5, "Đà Lạt Tour", 0, 45, 3));
-//        tours.add(new Tour(6, "Đà Lạt Tour", 0, 45, 3));
-//        tours.add(new Tour(7, "Đà Lạt Tour", 0, 45, 3));
-//        tours.add(new Tour(8, "Đà Lạt Tour", 0, 45, 3));
-//        tours.add(new Tour(9, "Đà Lạt Tour", 0, 45, 3));
-//        tours.add(new Tour(10, "Đà Lạt Tour", 0, 45, 3));
-//        tours.add(new Tour(11, "Đà Lạt Tour", 0, 45, 3));
-//
-//        TourAdapter tourAdapter = new TourAdapter(this, tours);
-//        toursList.setAdapter(tourAdapter);
-//        toursList.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,
-//                false));
-//
-//        tourAdapter.notifyDataSetChanged();
     }
 
     private void selectFragment(Fragment fragment) {

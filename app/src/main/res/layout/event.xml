@@ -38,7 +38,7 @@
             app:layout_constraintStart_toEndOf="@id/imgBtn_logo"
             app:layout_constraintEnd_toStartOf="@id/imgBtn_notice"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/et_search"
+            app:layout_constraintBottom_toTopOf="@id/rellay_search_filter"
             android:text="TOURS"
             android:fontFamily="@font/inter_bold"
             android:textSize="30sp"
@@ -57,93 +57,111 @@
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <EditText
-            android:id="@+id/et_search"
+        <RelativeLayout
             android:layout_width="0dp"
             android:layout_height="55dp"
-            android:layout_marginStart="5dp"
-            android:layout_marginEnd="5dp"
-            android:layout_marginTop="5dp"
+            android:id="@+id/rellay_search_filter"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_tour_title"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="5dp"
             android:background="@drawable/edit_shadow_rectangle_bg"
-            android:drawableStart="@drawable/ic_baseline_search_24"
-            android:elevation="4dp"
-            android:fontFamily="@font/inter_regular"
-            android:hint="Tìm kiếm trên BoTo"
-            android:paddingStart="15dp"
-            android:textColorHint="@color/hint"
-            android:textSize="15sp"
-            android:inputType="text"
-            tools:ignore="InvalidId,RtlSymmetry" />
+            android:elevation="4dp">
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:layout_centerInParent="true"
+                android:background="@null"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:fontFamily="@font/inter_regular"
+                android:hint="Tìm kiếm trên BoTo"
+                android:inputType="text"
+                android:paddingStart="15dp"
+                android:textColorHint="@color/hint"
+                android:textSize="15sp"
+                tools:ignore="InvalidId,RtlSymmetry" />
+
+            <ImageButton
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/imgBtn_filter"
+                android:layout_alignRight="@+id/et_search"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="15dp"
+                android:background="@null"
+                android:src="@drawable/img_filter"
+                android:scaleType="fitCenter"
+                android:paddingTop="8dp"
+                android:paddingStart="7dp"
+                android:paddingBottom="8dp"
+                android:paddingEnd="8dp"/>
+        </RelativeLayout>
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <Spinner
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:id="@+id/sn_time"
-        app:layout_constraintTop_toBottomOf="@id/conlay_header"
-        app:layout_constraintStart_toStartOf="@id/conlay_header"
-        android:layout_marginTop="15dp"
-        android:spinnerMode="dropdown"
-        android:background="@drawable/edit_spinner_bg"
-        android:dropDownVerticalOffset="40dp"/>
-
-    <Spinner
-        android:layout_width="125dp"
-        android:layout_height="40dp"
-        android:id="@+id/sn_modeView"
-        app:layout_constraintTop_toBottomOf="@id/conlay_header"
-        app:layout_constraintStart_toEndOf="@id/sn_time"
-        android:layout_marginTop="15dp"
-        android:layout_marginStart="10dp"
-        android:spinnerMode="dropdown"
-        android:dropDownVerticalOffset="40dp"
-        android:background="@drawable/edit_spinner_bg"
-        tools:ignore="RtlSymmetry" />
-
-    <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/imgBtn_add"
-        app:layout_constraintTop_toBottomOf="@id/conlay_header"
-        app:layout_constraintEnd_toStartOf="@id/imgBtn_filter"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="10dp"
-        android:background="@drawable/edit_shadow_cycle_bg"
-        android:src="@drawable/img_add"
-        android:scaleType="fitCenter"
-        android:paddingTop="7dp"
-        android:paddingStart="6dp"
-        android:paddingBottom="8dp"
-        android:paddingEnd="8dp"/>
-
-    <ImageButton
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:id="@+id/imgBtn_filter"
-        app:layout_constraintTop_toBottomOf="@id/conlay_header"
-        app:layout_constraintEnd_toEndOf="@id/conlay_header"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/edit_shadow_cycle_bg"
-        android:src="@drawable/img_filter"
-        android:scaleType="fitCenter"
-        android:paddingTop="8dp"
-        android:paddingStart="7dp"
-        android:paddingBottom="8dp"
-        android:paddingEnd="8dp"/>
-
-    <FrameLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/fl_viewMode"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sn_time"
+        app:layout_constraintTop_toBottomOf="@id/conlay_header"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintBottom_toTopOf="@id/toolBar"
-        android:layout_marginTop="15dp"/>
+        android:layout_marginTop="15dp"
+        android:scrollbarThumbVertical="@color/blue_app"
+        android:scrollbarSize="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <CalendarView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/event_calendar"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/rellay_event_detail"
+                android:background="@drawable/edit_item_bg"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/rellay_event_detail"
+                app:layout_constraintTop_toBottomOf="@id/event_calendar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                android:layout_marginTop="15dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_title"
+                    android:layout_marginBottom="15dp"
+                    android:text="Events"
+                    android:fontFamily="@font/inter_medium"
+                    android:textSize="20sp"
+                    android:textColor="@color/black"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rcv_detailedEvents"
+                    android:layout_below="@+id/tv_title"/>
+
+            </RelativeLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="420dp"

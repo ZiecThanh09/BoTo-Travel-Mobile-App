@@ -21,6 +21,15 @@ public class FeedActivity extends AppCompatActivity {
         setContentView(R.layout.newfeed);
 
         findViewsByIds();
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    private void findViewsByIds() {
+        ImageButton ibTour = findViewById(R.id.imgBtn_book);
+        ImageButton ibEvent = findViewById(R.id.imgBtn_event);
+        ImageButton ibUser = findViewById(R.id.imgBtntn_user);
+        RecyclerView storiesBar = findViewById(R.id.storiesBar);
+        RecyclerView newFeeds = findViewById(R.id.newFeeds);
 
         // Animation Button
         ibTour.setOnClickListener(new View.OnClickListener() {
@@ -31,19 +40,14 @@ public class FeedActivity extends AppCompatActivity {
                 // overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
             }
         });
-    }
 
-    private ImageButton ibTour, ibEvent, ibUser;
-
-    @SuppressLint("NotifyDataSetChanged")
-    private void findViewsByIds() {
-        ibTour = findViewById(R.id.imgBtn_book);
-        ibEvent = findViewById(R.id.imgBtn_event);
-        ibUser = findViewById(R.id.imgBtntn_user);
-        RecyclerView storiesBar = findViewById(R.id.storiesBar);
-        RecyclerView newFeeds = findViewById(R.id.newFeeds);
-        newFeeds.setNestedScrollingEnabled(false);
-
+        ibEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentEvent = new Intent(FeedActivity.this, EventActivity.class);
+                startActivity(intentEvent);
+            }
+        });
 
 
         // Stories Bar
@@ -79,6 +83,7 @@ public class FeedActivity extends AppCompatActivity {
         newFeeds.setAdapter(feedAdapter);
         newFeeds.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL,
                 false));
+        newFeeds.setNestedScrollingEnabled(false);
 
         feedAdapter.notifyDataSetChanged();
     }

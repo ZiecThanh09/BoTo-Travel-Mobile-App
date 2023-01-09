@@ -40,6 +40,7 @@ public class FeedAdapter extends RecyclerView.Adapter<FeedAdapter.FeedsViewHolde
         holder.tv_likes.setText(String.valueOf(feed.getLikes()));
         holder.tv_comments.setText(String.valueOf(feed.getComments()));
         holder.tv_share.setText(String.valueOf(feed.getShares()));
+        holder.imgView_proPic.setImageResource(feed.getProPic());
 
         if (feed.getTime().equals("Vừa xong")) {
             holder.tv_time.setTextColor(Color.parseColor("#44ADE5"));
