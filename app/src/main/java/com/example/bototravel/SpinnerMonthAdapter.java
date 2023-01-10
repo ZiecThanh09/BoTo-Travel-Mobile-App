@@ -8,23 +8,23 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class SpinnerModeAdapter extends BaseAdapter {
+public class SpinnerMonthAdapter extends BaseAdapter {
     Context context;
-    SpinnerMode[] spinnerModes;
+    SpinnerMonth[] spinnerMonths;
 
-    public SpinnerModeAdapter(Context context, SpinnerMode[] spinnerModes) {
+    public SpinnerMonthAdapter(Context context, SpinnerMonth[] spinnerMonths) {
         this.context = context;
-        this.spinnerModes = spinnerModes;
+        this.spinnerMonths = spinnerMonths;
     }
 
     @Override
     public int getCount() {
-        return spinnerModes.length;
+        return spinnerMonths.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return spinnerModes[position];
+        return spinnerMonths[position];
     }
 
     @Override
@@ -35,19 +35,19 @@ public class SpinnerModeAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         @SuppressLint("ViewHolder") View view = LayoutInflater.from(context)
-                .inflate(R.layout.tour_item_spinner_mode, parent, false);
+                .inflate(R.layout.tour_item_spinner_time, parent, false);
 
-        TextView tv_mode = view.findViewById(R.id.tv_modeView);
-        tv_mode.setText(spinnerModes[position].getModeName());
+        TextView month = view.findViewById(R.id.tv_time);
+        month.setText(spinnerMonths[position].getMonth());
 
         return view;
     }
 
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
-        convertView = LayoutInflater.from(context).inflate(R.layout.tour_item_spinner_mode, null);
-        TextView modeNames = convertView.findViewById(R.id.tv_modeView);
-        modeNames.setText(spinnerModes[position].getModeName());
+        convertView = LayoutInflater.from(context).inflate(R.layout.tour_item_spinner_time, null);
+        TextView modeNames = convertView.findViewById(R.id.tv_time);
+        modeNames.setText(spinnerMonths[position].getMonth());
         return convertView;
     }
 }

@@ -4,13 +4,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingStart="15dp"
-    android:paddingBottom="5dp"
+    android:paddingBottom="4dp"
     tools:ignore="RtlSymmetry">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="32dp"
-        android:id="@+id/tv_modeView"
+        android:id="@+id/tv_time"
         android:fontFamily="@font/inter_regular"
         android:textSize="18sp"
         android:textColor="@color/black"

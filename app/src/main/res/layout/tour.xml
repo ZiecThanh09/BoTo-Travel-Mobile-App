@@ -88,8 +88,8 @@
         app:layout_constraintStart_toStartOf="@id/conlay_header"
         android:layout_marginTop="15dp"
         android:spinnerMode="dropdown"
-        android:background="@drawable/edit_spinner_bg"
-        android:dropDownVerticalOffset="40dp"/>
+        android:dropDownVerticalOffset="40dp"
+        android:background="@drawable/edit_spinner_bg"/>
 
     <Spinner
         android:layout_width="125dp"

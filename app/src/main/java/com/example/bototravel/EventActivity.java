@@ -32,7 +32,8 @@ public class EventActivity extends AppCompatActivity {
         ibFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                Intent intentFeed = new Intent(EventActivity.this, FeedActivity.class);
+                startActivity(intentFeed);
                 // add animation
             }
         });

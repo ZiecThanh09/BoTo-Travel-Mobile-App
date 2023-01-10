@@ -1,12 +1,12 @@
 package com.example.bototravel;
 
-public enum TableMode {
+public enum SpinnerMode {
     TableMode1("Bảng"),
     TableMode2("Lịch");
 
     private String modeName;
 
-    TableMode(String modeName) {
+    SpinnerMode(String modeName) {
         this.modeName = modeName;
     }
 

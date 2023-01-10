@@ -37,7 +37,7 @@ public class FeedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentTour = new Intent(FeedActivity.this, TourActivity.class);
                 startActivity(intentTour);
-                // overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
+                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
             }
         });
 

@@ -1,10 +1,13 @@
 package com.example.bototravel;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,13 +16,17 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class TourTableAdapter extends RecyclerView.Adapter<TourTableAdapter.TourTableViewHolder>{
-    Context context;
-    ArrayList<Tour> tours;
+public class TourTableAdapter extends RecyclerView.Adapter<TourTableAdapter.TourTableViewHolder> implements Filterable {
+    private Context context;
+    private ArrayList<Tour> tours;
+    private ArrayList<Tour> toursOld;
+
 
     public TourTableAdapter(Context context, ArrayList<Tour> tours) {
         this.context = context;
         this.tours = tours;
+        this.toursOld = tours;
+
     }
 
     @NonNull
@@ -56,6 +63,37 @@ public class TourTableAdapter extends RecyclerView.Adapter<TourTableAdapter.Tour
     @Override
     public int getItemCount() {
         return tours.size();
+    }
+
+    @Override
+    public Filter getFilter() {
+        return new Filter() {
+            @Override
+            protected FilterResults performFiltering(CharSequence constraint) {
+                int monthSearch = Integer.parseInt(constraint.toString());
+                if (monthSearch >=0 && monthSearch <= 12) {
+                    ArrayList<Tour> arrayList = new ArrayList<>();
+                    for (Tour tour : toursOld) {
+                        if (tour.getStartMonth() == monthSearch) {
+                            arrayList.add(tour);
+                        }
+                    }
+                    tours = arrayList;
+                } else tours = toursOld;
+
+                FilterResults filterResults = new FilterResults();
+                filterResults.values = tours;
+
+                return filterResults;
+            }
+
+            @SuppressLint("NotifyDataSetChanged")
+            @Override
+            protected void publishResults(CharSequence constraint, FilterResults results) {
+                tours = (ArrayList<Tour>) results.values;
+                notifyDataSetChanged();
+            }
+        };
     }
 
     public static class TourTableViewHolder extends RecyclerView.ViewHolder {
