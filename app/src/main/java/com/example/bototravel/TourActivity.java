@@ -12,8 +12,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import java.util.Calendar;
+
 public class TourActivity extends AppCompatActivity {
-    private int content;
+    private int month;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,46 +89,12 @@ public class TourActivity extends AppCompatActivity {
         SpinnerMonthAdapter spinnerMonthAdapter = new SpinnerMonthAdapter(
                 this, SpinnerMonth.values());
         snTime.setAdapter(spinnerMonthAdapter);
+        snTime.setSelection(Calendar.getInstance().get(Calendar.MONTH));
         snTime.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position) {
-                    case 0:
-                        content = 1;
-                        break;
-                    case 1:
-                        content = 2;
-                        break;
-                    case 2:
-                        content = 3;
-                        break;
-                    case 3:
-                        content = 4;
-                        break;
-                    case 4:
-                        content = 5;
-                        break;
-                    case 5:
-                        content = 6;
-                        break;
-                    case 6:
-                        content = 7;
-                        break;
-                    case 7:
-                        content = 8;
-                        break;
-                    case 8:
-                        content = 9;
-                        break;
-                    case 9:
-                        content = 10;
-                        break;
-                    case 10:
-                        content = 11;
-                        break;
-                    case 11:
-                        content = 12;
-                        break;
+                if (position >= 0 && position < SpinnerMonth.values().length) {
+                    month = position;
                 }
             }
 
@@ -144,6 +112,6 @@ public class TourActivity extends AppCompatActivity {
     }
 
     public int getMonth() {
-        return content;
+        return month + 1;
     }
 }

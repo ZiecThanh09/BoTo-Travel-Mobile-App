@@ -62,6 +62,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/rcv_tours"
-        android:layout_below="@+id/llheader"/>
+        android:layout_below="@+id/llheader"
+        android:overScrollMode="never"
+        android:scrollbars="vertical"/>
 
 </RelativeLayout>
