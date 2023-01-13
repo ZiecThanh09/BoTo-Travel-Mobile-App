@@ -100,6 +100,7 @@ public class TourActivity extends AppCompatActivity {
                     month = position + 1;
                     itemViewModel = new ViewModelProvider(TourActivity.this).get(ItemViewModel.class);
                     itemViewModel.setData(month);
+                    startFragment(fragmentTourCalendar);
                     startFragment(fragmentTourTable);
                 }
             }

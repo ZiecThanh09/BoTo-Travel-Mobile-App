@@ -21,7 +21,6 @@ public class TourFragmentTable extends Fragment {
     private ArrayList<Tour> tours;
     private TourAdapterTable tourTableAdapter;
     private int month;
-    private int monthOld = 0;
 
     @Nullable
     @Override
@@ -43,10 +42,7 @@ public class TourFragmentTable extends Fragment {
         itemViewModel.getSelectedItem().observe(requireActivity(), item -> month = item);
 
         tourTableAdapter = new TourAdapterTable(getContext(), tours);
-        if (month != monthOld) {
-            getSearchData(month);
-            monthOld = month;
-        }
+        getSearchData(month);
 
         tourTableAdapter.notifyDataSetChanged();
     }
