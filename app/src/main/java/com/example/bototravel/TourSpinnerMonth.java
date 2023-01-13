@@ -1,6 +1,6 @@
 package com.example.bototravel;
 
-public enum SpinnerMonth {
+public enum TourSpinnerMonth {
     SpinnerMode1("Tháng 1"),
     SpinnerMode2("Tháng 2"),
     SpinnerMode3("Tháng 3"),
@@ -16,7 +16,7 @@ public enum SpinnerMonth {
 
     private String month;
 
-    SpinnerMonth(String month) {
+    TourSpinnerMonth(String month) {
         this.month = month;
     }
 

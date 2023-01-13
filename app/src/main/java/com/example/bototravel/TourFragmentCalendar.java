@@ -14,7 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class FragmentTourCalendar extends Fragment {
+public class TourFragmentCalendar extends Fragment {
     private RecyclerView toursList;
     private ArrayList<Tour> tours;
 
@@ -35,9 +35,9 @@ public class FragmentTourCalendar extends Fragment {
         toursList.setLayoutManager(new LinearLayoutManager(getContext()));
         toursList.setNestedScrollingEnabled(false);
 
-        TourCalendarAdapter tourCalendarAdapter = new TourCalendarAdapter(getContext(), tours);
-        toursList.setAdapter(tourCalendarAdapter);
-        tourCalendarAdapter.notifyDataSetChanged();
+        TourAdapterCalendar tourAdapterCalendar = new TourAdapterCalendar(getContext(), tours);
+        toursList.setAdapter(tourAdapterCalendar);
+        tourAdapterCalendar.notifyDataSetChanged();
     }
 
     private void dataInitialize() {

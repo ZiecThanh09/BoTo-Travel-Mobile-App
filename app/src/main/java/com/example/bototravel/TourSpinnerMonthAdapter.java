@@ -8,23 +8,23 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class SpinnerMonthAdapter extends BaseAdapter {
+public class TourSpinnerMonthAdapter extends BaseAdapter {
     Context context;
-    SpinnerMonth[] spinnerMonths;
+    TourSpinnerMonth[] tourSpinnerMonths;
 
-    public SpinnerMonthAdapter(Context context, SpinnerMonth[] spinnerMonths) {
+    public TourSpinnerMonthAdapter(Context context, TourSpinnerMonth[] tourSpinnerMonths) {
         this.context = context;
-        this.spinnerMonths = spinnerMonths;
+        this.tourSpinnerMonths = tourSpinnerMonths;
     }
 
     @Override
     public int getCount() {
-        return spinnerMonths.length;
+        return tourSpinnerMonths.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return spinnerMonths[position];
+        return tourSpinnerMonths[position];
     }
 
     @Override
@@ -38,7 +38,7 @@ public class SpinnerMonthAdapter extends BaseAdapter {
                 .inflate(R.layout.tour_item_spinner_time, parent, false);
 
         TextView month = view.findViewById(R.id.tv_time);
-        month.setText(spinnerMonths[position].getMonth());
+        month.setText(tourSpinnerMonths[position].getMonth());
 
         return view;
     }
@@ -47,7 +47,7 @@ public class SpinnerMonthAdapter extends BaseAdapter {
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(R.layout.tour_item_spinner_time, null);
         TextView modeNames = convertView.findViewById(R.id.tv_time);
-        modeNames.setText(spinnerMonths[position].getMonth());
+        modeNames.setText(tourSpinnerMonths[position].getMonth());
         return convertView;
     }
 }

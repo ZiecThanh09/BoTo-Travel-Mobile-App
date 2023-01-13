@@ -8,23 +8,23 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-public class SpinnerModeAdapter extends BaseAdapter {
+public class TourSpinnerModeAdapter extends BaseAdapter {
     Context context;
-    SpinnerMode[] spinnerModes;
+    TourSpinnerMode[] tourSpinnerModes;
 
-    public SpinnerModeAdapter(Context context, SpinnerMode[] spinnerModes) {
+    public TourSpinnerModeAdapter(Context context, TourSpinnerMode[] tourSpinnerModes) {
         this.context = context;
-        this.spinnerModes = spinnerModes;
+        this.tourSpinnerModes = tourSpinnerModes;
     }
 
     @Override
     public int getCount() {
-        return spinnerModes.length;
+        return tourSpinnerModes.length;
     }
 
     @Override
     public Object getItem(int position) {
-        return spinnerModes[position];
+        return tourSpinnerModes[position];
     }
 
     @Override
@@ -38,7 +38,7 @@ public class SpinnerModeAdapter extends BaseAdapter {
                 .inflate(R.layout.tour_item_spinner_mode, parent, false);
 
         TextView tv_mode = view.findViewById(R.id.tv_modeView);
-        tv_mode.setText(spinnerModes[position].getModeName());
+        tv_mode.setText(tourSpinnerModes[position].getModeName());
 
         return view;
     }
@@ -47,7 +47,7 @@ public class SpinnerModeAdapter extends BaseAdapter {
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         convertView = LayoutInflater.from(context).inflate(R.layout.tour_item_spinner_mode, null);
         TextView modeNames = convertView.findViewById(R.id.tv_modeView);
-        modeNames.setText(spinnerModes[position].getModeName());
+        modeNames.setText(tourSpinnerModes[position].getModeName());
         return convertView;
     }
 }

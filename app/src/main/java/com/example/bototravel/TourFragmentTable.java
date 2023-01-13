@@ -9,25 +9,23 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class FragmentTourTable extends Fragment {
+public class TourFragmentTable extends Fragment {
 
     private RecyclerView toursList;
     private ArrayList<Tour> tours;
-    private TourTableAdapter tourTableAdapter;
-    int month, monthOld = 0;
+    private TourAdapterTable tourTableAdapter;
+    private int month;
+    private int monthOld = 0;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        TourActivity tourActivity = (TourActivity) getActivity();
-        assert tourActivity != null;
-        month = tourActivity.getMonth();
-
         return inflater.inflate(R.layout.tour_fragment_table, container, false);
     }
 
@@ -41,7 +39,10 @@ public class FragmentTourTable extends Fragment {
         toursList = view.findViewById(R.id.rcv_tours);
         toursList.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        tourTableAdapter = new TourTableAdapter(getContext(), tours);
+        ItemViewModel itemViewModel = new ViewModelProvider(requireActivity()).get(ItemViewModel.class);
+        itemViewModel.getSelectedItem().observe(requireActivity(), item -> month = item);
+
+        tourTableAdapter = new TourAdapterTable(getContext(), tours);
         if (month != monthOld) {
             getSearchData(month);
             monthOld = month;
@@ -53,14 +54,14 @@ public class FragmentTourTable extends Fragment {
     private void getSearchData(int month) {
         ArrayList<Tour> tourSearch = new ArrayList<>();
         if (month > 12) {
-            tourTableAdapter = new TourTableAdapter(getContext(), tours);
+            tourTableAdapter = new TourAdapterTable(getContext(), tours);
         } else {
             for (Tour tour : tours) {
                 if (tour.getStartMonth() == month) {
                     tourSearch.add(tour);
                 }
             }
-            tourTableAdapter = new TourTableAdapter(getContext(), tourSearch);
+            tourTableAdapter = new TourAdapterTable(getContext(), tourSearch);
         }
         toursList.setAdapter(tourTableAdapter);
 

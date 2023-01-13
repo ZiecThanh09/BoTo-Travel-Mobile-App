@@ -1,13 +1,10 @@
 package com.example.bototravel;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Filter;
-import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,13 +13,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class TourTableAdapter extends RecyclerView.Adapter<TourTableAdapter.TourTableViewHolder> {
+public class TourAdapterTable extends RecyclerView.Adapter<TourAdapterTable.TourTableViewHolder> {
     Context context;
     ArrayList<Tour> tours;
     ArrayList<Tour> toursOld;
 
 
-    public TourTableAdapter(Context context, ArrayList<Tour> tours) {
+    public TourAdapterTable(Context context, ArrayList<Tour> tours) {
         this.context = context;
         this.tours = tours;
         this.toursOld = tours;

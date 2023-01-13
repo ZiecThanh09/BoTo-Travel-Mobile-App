@@ -12,11 +12,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class TourCalendarAdapter extends RecyclerView.Adapter<TourCalendarAdapter.TourCalendarViewHolder> {
+public class TourAdapterCalendar extends RecyclerView.Adapter<TourAdapterCalendar.TourCalendarViewHolder> {
     Context context;
     ArrayList<Tour> tours;
 
-    public TourCalendarAdapter(Context context, ArrayList<Tour> tours) {
+    public TourAdapterCalendar(Context context, ArrayList<Tour> tours) {
         this.context = context;
         this.tours = tours;
     }
@@ -26,7 +26,7 @@ public class TourCalendarAdapter extends RecyclerView.Adapter<TourCalendarAdapte
     public TourCalendarViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.tour_item_calendar,
                 parent, false);
-        return new TourCalendarAdapter.TourCalendarViewHolder(view);
+        return new TourAdapterCalendar.TourCalendarViewHolder(view);
     }
 
     @Override
