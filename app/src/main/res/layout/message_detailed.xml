@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/conlay_header"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerView"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:background="@drawable/edit_rectangle_bg">
+
+        <ImageView
+            android:id="@+id/img_avt"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/avt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="Trần Triệu Thiên"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/img_avt"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/img_Status"
+            android:layout_width="9dp"
+            android:layout_height="8dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_online"
+            app:layout_constraintTop_toBottomOf="@id/tv_username"
+            app:layout_constraintStart_toStartOf="@id/tv_username"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="1dp"
+            android:text="Đang hoạt động"
+            android:textSize="10dp"
+            app:layout_constraintStart_toEndOf="@+id/img_Status"
+            app:layout_constraintTop_toBottomOf="@id/tv_username"
+            app:layout_constraintBottom_toBottomOf="parent"
+             />
+
+        <LinearLayout
+            android:id="@+id/toolBar"
+            android:layout_width="166dp"
+            android:layout_height="36dp"
+            android:background="@drawable/edit_toolbar_bg"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/tv_status"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/btn_Call"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="2mm"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2mm"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_phone" />
+
+            <ImageButton
+                android:id="@+id/btn_VideoCall"
+                android:layout_width="42dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="2mm"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2mm"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_videocall" />
+
+            <ImageButton
+                android:id="@+id/btn_X"
+                android:layout_width="27dp"
+                android:layout_height="31dp"
+                android:layout_marginStart="2mm"
+                android:layout_marginTop="2dp"
+                android:layout_marginEnd="2mm"
+                android:background="@color/white"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_x" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="409dp"
+        android:layout_height="591dp"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="57dp"
+        app:layout_constraintTop_toBottomOf="@id/conlay_header"
+        app:layout_constraintBottom_toTopOf="@id/ll_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@drawable/edit_rectangle_bg"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:id="@+id/ll_input"
+        android:background="@drawable/edit_toolbar_bg"
+        android:backgroundTint="@color/light_grey"
+        android:orientation="horizontal"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recyclerView"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp">
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:background="@color/light_grey"
+            android:hint="Nhập tin nhắn..."
+            android:scaleType="fitCenter"
+            android:layout_weight="2"/>
+
+        <LinearLayout
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/ll_tool"
+            android:layout_marginStart="20dp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_weight="0"
+            android:layout_marginEnd="15dp">
+
+            <ImageButton
+                android:id="@+id/btn_Picture"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/light_grey"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_picture"
+                android:layout_weight="3"/>
+
+            <ImageButton
+                android:id="@+id/btn_voice"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/light_grey"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_voice"
+                android:layout_weight="3"/>
+
+            <ImageButton
+                android:id="@+id/btn_Link"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@color/light_grey"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_link"
+                android:layout_weight="3"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

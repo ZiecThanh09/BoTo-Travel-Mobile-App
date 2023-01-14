@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/white"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
+        android:text="Thành tựu"
+        android:textColor="@color/blue_app"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toBottomOf="@+id/message3" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_logo"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/edit_shadow_cycle_bg"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_logo"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageButton
+        android:id="@+id/imgBtn_notice"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="15dp"
+        android:background="@drawable/edit_shadow_cycle_bg"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_option"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+
+    <TextView
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:text="Trần Triệu Thiên"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imgView_proPic"
+        android:layout_width="117dp"
+        android:layout_height="112dp"
+        android:adjustViewBounds="true"
+        android:scaleType="fitCenter"
+        android:src="@drawable/avt"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="89dp" />
+
+    <TextView
+        android:id="@+id/message2"
+        android:layout_width="169dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:text="Trần Triệu Thiên"
+        android:textColor="@color/black"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgView_proPic" />
+
+    <TextView
+        android:id="@+id/message3"
+        android:layout_width="402dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="4dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:fontFamily="@font/inter_medium"
+        android:gravity="center"
+        android:minHeight="48dp"
+        android:text="Đây là tiểu sử......."
+        android:textColor="@color/grey"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.083"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message2" />
+
+
+    <ImageButton
+        android:id="@+id/img_check"
+        android:layout_width="36dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="212dp"
+        android:background="@drawable/edit_shadow_cycle_bg"
+        android:padding="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/img_check"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/message2"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:id="@+id/Infoooooo"
+        android:layout_width="246dp"
+        android:layout_height="52dp"
+        android:orientation="horizontal"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="145dp"
+        tools:layout_editor_absoluteY="89dp">
+
+        <LinearLayout
+            android:id="@+id/Info"
+            android:layout_width="71dp"
+            android:layout_height="50dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="127dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <TextView
+                android:id="@+id/tv_Follower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="1000"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_Followerr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:text="Following"
+                android:textColor="@color/grey"
+                android:textSize="13sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Infoo"
+            android:layout_width="63dp"
+            android:layout_height="51dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="198dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <TextView
+                android:id="@+id/tv_Follow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="1500"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_Followerrr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:text="Follower"
+                android:textColor="@color/grey"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/Infooo"
+            android:layout_width="89dp"
+            android:layout_height="52dp"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="261dp"
+            tools:layout_editor_absoluteY="120dp">
+
+            <TextView
+                android:id="@+id/tv_Repu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_bold"
+                android:text="15"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_Repuu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/inter_regular"
+                android:text="Reputation"
+                android:textColor="@color/grey"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/edit_follow_bg"
+        android:fontFamily="@font/inter_bold"
+        android:text="Follow"
+        android:textColor="@color/blue_app"
+        android:textSize="14sp"
+        app:backgroundTint="@color/btn_follow"
+        app:layout_constraintStart_toEndOf="@+id/imgView_proPic"
+        tools:layout_editor_absoluteY="141dp"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button_Message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/edit_follow_bg"
+        android:fontFamily="@font/inter_bold"
+        android:text="Message"
+        android:textColor="@color/blue_app"
+        android:textSize="14sp"
+        app:backgroundTint="@color/btn_follow"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        tools:layout_editor_absoluteY="141dp"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="420dp"
+        android:layout_height="80dp"
+        android:id="@+id/toolBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="-28dp"
+        android:background="@drawable/edit_toolbar_bg"
+        android:backgroundTint="@color/blue_app"
+        android:orientation="horizontal"
+        tools:ignore="InOrMmUsage">
+
+        <ImageButton
+            android:id="@+id/btn_home"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="7.5mm"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="4mm"
+            android:background="@color/blue_app"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_home" />
+
+        <ImageButton
+            android:id="@+id/btn_book"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4mm"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="4mm"
+            android:background="@color/blue_app"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_book" />
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/btn_event"
+            android:layout_marginTop="6dp"
+            android:layout_marginStart="5mm"
+            android:layout_marginEnd="4mm"
+            android:src="@drawable/img_event"
+            android:scaleType="fitCenter"
+            android:background="@color/blue_app"/>
+
+        <ImageButton
+            android:id="@+id/btn_user"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="4mm"
+            android:layout_marginTop="6dp"
+            android:background="@color/blue_app"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_user" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="48dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="@color/white"
+        android:text="Thông tin"
+        android:textColor="@color/blue_app"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/message3" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="405dp"
+        android:layout_height="328dp"
+        android:layout_marginTop="3dp"
+        android:text="\n\nNgày sinh:\n\nQuê quán:\n\nLàm việc tại:\n\nVị trí:\n\nThời gian làm việc:\n\nSở thích:"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/toolBar"
+        app:layout_constraintTop_toBottomOf="@+id/button3"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_editor_absoluteX="5dp"
+        tools:ignore="MissingConstraints" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
