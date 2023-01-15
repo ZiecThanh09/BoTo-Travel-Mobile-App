@@ -9,13 +9,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="80dp"
         android:id="@+id/conlay_header"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/recyclerView"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:paddingTop="15dp"
+        android:layout_marginTop="-15dp"
+        android:paddingTop="30dp"
         android:paddingBottom="15dp"
         android:background="@drawable/edit_rectangle_bg">
 
@@ -70,45 +71,41 @@
             android:id="@+id/toolBar"
             android:layout_width="166dp"
             android:layout_height="36dp"
-            android:background="@drawable/edit_toolbar_bg"
             android:orientation="horizontal"
+            android:gravity="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/tv_status"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginEnd="15dp">
 
             <ImageButton
                 android:id="@+id/btn_Call"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginStart="2mm"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2mm"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="10dp"
                 android:background="@color/white"
                 android:scaleType="fitCenter"
-                android:src="@drawable/img_phone" />
+                android:src="@drawable/img_phone"
+                android:layout_weight="3"/>
 
             <ImageButton
                 android:id="@+id/btn_VideoCall"
-                android:layout_width="42dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="2mm"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2mm"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@color/white"
                 android:scaleType="fitCenter"
-                android:src="@drawable/img_videocall" />
+                android:src="@drawable/img_videocall"
+                android:layout_weight="3"/>
 
             <ImageButton
                 android:id="@+id/btn_X"
-                android:layout_width="27dp"
-                android:layout_height="31dp"
-                android:layout_marginStart="2mm"
-                android:layout_marginTop="2dp"
-                android:layout_marginEnd="2mm"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginEnd="10dp"
                 android:background="@color/white"
                 android:scaleType="fitCenter"
-                android:src="@drawable/img_close" />
+                android:src="@drawable/img_close"
+                android:layout_weight="3"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -122,7 +119,6 @@
         app:layout_constraintBottom_toTopOf="@id/ll_input"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:background="@drawable/edit_rectangle_bg"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"/>
 

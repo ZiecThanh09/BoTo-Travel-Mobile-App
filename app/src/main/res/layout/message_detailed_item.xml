@@ -13,7 +13,7 @@
         android:id="@+id/img_avt"
         android:layout_width="56dp"
         android:layout_height="61dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
@@ -25,26 +25,25 @@
         android:id="@+id/content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="5dp"
         android:background="@drawable/edit_toolbar_bg"
         android:backgroundTint="@color/light_grey"
         android:text="  Content......"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@+id/img_avt"
-        tools:layout_editor_absoluteY="33dp" />
+        app:layout_constraintBottom_toBottomOf="@id/img_avt" />
 
     <TextView
         android:id="@+id/Time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="27dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
         android:text="8:30 AM"
         android:textColor="@color/black"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/img_avt"
+        app:layout_constraintStart_toEndOf="@id/img_avt"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -13,7 +13,7 @@
         android:id="@+id/img_avt"
         android:layout_width="48dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="8dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
@@ -34,40 +34,35 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/Username"
+        android:id="@+id/tv_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="15dp"
         android:text="Trần Triệu Thiên"
         android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/img_avt"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/img_avt" />
 
     <TextView
         android:id="@+id/Content"
-        android:layout_width="233dp"
+        android:layout_width="wrap_content"
         android:layout_height="22dp"
-        android:layout_marginStart="96dp"
         android:layout_marginBottom="-28dp"
         android:text="Content......"
         android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="@+id/Username"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="@+id/tv_username"
+        app:layout_constraintStart_toStartOf="@id/tv_username" />
 
     <TextView
         android:id="@+id/Time"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="276dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginRight="27dp"
+        android:layout_marginEnd="15dp"
         android:text="8:30 AM"
-        android:textColor="@color/black"
+        android:textColor="@color/grey"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/tv_username" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
