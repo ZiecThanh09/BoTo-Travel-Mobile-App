@@ -17,7 +17,7 @@ import java.util.Calendar;
 
 public class TourActivity extends AppCompatActivity {
     private int month;
-    private ItemViewModel itemViewModel;
+    private TourItemViewModel tourItemViewModel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -31,6 +31,7 @@ public class TourActivity extends AppCompatActivity {
     private void findViewByIds() {
         ImageButton ibFeed = findViewById(R.id.imgBtn_home);
         ImageButton ibEvent = findViewById(R.id.imgBtn_event);
+        ImageButton ibUser = findViewById(R.id.imgBtn_user);
         TourFragmentTable fragmentTourTable;
         TourFragmentCalendar fragmentTourCalendar;
         Spinner snTime = findViewById(R.id.sn_time);
@@ -51,7 +52,16 @@ public class TourActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentEvent = new Intent(TourActivity.this, EventActivity.class);
                 startActivity(intentEvent);
-                // add animation
+                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
+            }
+        });
+
+        ibUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentUser = new Intent(TourActivity.this, AccountActivity.class);
+                startActivity(intentUser);
+                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
             }
         });
 
@@ -98,8 +108,8 @@ public class TourActivity extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position >= 0 && position < TourSpinnerMonth.values().length) {
                     month = position + 1;
-                    itemViewModel = new ViewModelProvider(TourActivity.this).get(ItemViewModel.class);
-                    itemViewModel.setData(month);
+                    tourItemViewModel = new ViewModelProvider(TourActivity.this).get(TourItemViewModel.class);
+                    tourItemViewModel.setData(month);
                     startFragment(fragmentTourCalendar);
                     startFragment(fragmentTourTable);
                 }

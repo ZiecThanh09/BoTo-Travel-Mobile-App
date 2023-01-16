@@ -26,6 +26,7 @@ public class EventActivity extends AppCompatActivity {
     private void findViewByIds() {
         ImageButton ibFeed = findViewById(R.id.imgBtn_home);
         ImageButton ibTour = findViewById(R.id.imgBtn_book);
+        ImageButton ibUser = findViewById(R.id.imgBtn_user);
         RecyclerView events = findViewById(R.id.rcv_detailedEvents);
 
         // Animation Button
@@ -34,7 +35,7 @@ public class EventActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentFeed = new Intent(EventActivity.this, FeedActivity.class);
                 startActivity(intentFeed);
-                // add animation
+                overridePendingTransition(R.anim.anim_move_in_left, R.anim.anim_move_out_right);
             }
         });
 
@@ -43,10 +44,20 @@ public class EventActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentTour = new Intent(EventActivity.this, TourActivity.class);
                 startActivity(intentTour);
-                // overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
+                overridePendingTransition(R.anim.anim_move_in_left, R.anim.anim_move_out_right);
             }
         });
 
+        ibUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentUser = new Intent(EventActivity.this, AccountActivity.class);
+                startActivity(intentUser);
+                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
+            }
+        });
+
+        // Events
         ArrayList<Event> eventArrayList = new ArrayList<>();
         eventArrayList.add(new Event(1, 1, "Tên sự kiện 1",
                 "8/1/2023", "8/2/2023", "Tất cả nhân viên"));

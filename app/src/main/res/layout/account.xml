@@ -64,8 +64,8 @@
 
     <ImageView
         android:id="@+id/imgView_proPic"
-        android:layout_width="117dp"
-        android:layout_height="112dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         android:adjustViewBounds="true"
         android:scaleType="fitCenter"
         android:src="@drawable/ic_launcher_foreground"
@@ -82,7 +82,6 @@
         app:layout_constraintTop_toTopOf="@id/imgView_proPic"
         app:layout_constraintStart_toEndOf="@id/imgView_proPic"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="5dp"
         android:gravity="center">
 
         <LinearLayout
@@ -174,7 +173,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="5dp"
-        android:layout_marginBottom="5dp"
         android:orientation="horizontal">
 
         <Button
@@ -208,14 +206,14 @@
         android:layout_width="169dp"
         android:layout_height="48dp"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="5dp"
         android:clickable="true"
         android:focusable="true"
         android:fontFamily="@font/inter_medium"
         android:gravity="center"
         android:text="Trần Triệu Thiên"
         android:textColor="@color/black"
-        android:textSize="20dp"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@id/imgView_proPic"
         app:layout_constraintStart_toStartOf="parent"/>
 
@@ -235,7 +233,7 @@
     <TextView
         android:id="@+id/tv_bio"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="15dp"
         android:paddingStart="10dp"
@@ -244,30 +242,47 @@
         android:fontFamily="@font/inter_medium"
         android:text="Đây là tiểu sử......."
         android:textColor="@color/grey"
-        android:textSize="20dp"
+        android:textSize="15sp"
         app:layout_constraintTop_toBottomOf="@id/tv_username"
         app:layout_constraintStart_toStartOf="@id/tv_username"
         app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TableLayout
+    <com.google.android.material.tabs.TabLayout
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:id="@+id/tl_info"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_bio"
-        app:layout_constraintBottom_toTopOf="@id/vp_info"
-        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toTopOf="@id/sv_info"
+        android:layout_marginTop="20dp"
         app:tabSelectedTextColor="@color/blue_app"/>
 
-    <androidx.viewpager.widget.ViewPager
+    <ScrollView
+        android:id="@+id/sv_info"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:id="@+id/vp_info"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="29dp"
+        android:background="@drawable/edit_rectangle_bg"
+        android:paddingStart="15dp"
+        android:paddingTop="15dp"
+        android:paddingEnd="15dp"
+        android:paddingBottom="51dp"
+        android:scrollbarSize="2dp"
+        android:scrollbarThumbVertical="@color/blue_app"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/toolBar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tl_info"
-        app:layout_constraintBottom_toTopOf="@id/toolBar"/>
+        android:fillViewport="true">
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/vp_info"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="420dp"
@@ -283,7 +298,7 @@
         tools:ignore="InOrMmUsage">
 
         <ImageButton
-            android:id="@+id/btn_home"
+            android:id="@+id/imgBtn_home"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="7.5mm"
@@ -294,7 +309,7 @@
             android:src="@drawable/img_home" />
 
         <ImageButton
-            android:id="@+id/btn_book"
+            android:id="@+id/imgBtn_book"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="4mm"
@@ -307,7 +322,7 @@
         <ImageButton
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:id="@+id/btn_event"
+            android:id="@+id/imgBtn_event"
             android:layout_marginTop="6dp"
             android:layout_marginStart="5mm"
             android:layout_marginEnd="4mm"
@@ -316,7 +331,7 @@
             android:background="@color/blue_app"/>
 
         <ImageButton
-            android:id="@+id/btn_user"
+            android:id="@+id/imgBtn_user"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginStart="4mm"

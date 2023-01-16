@@ -46,6 +46,16 @@ public class FeedActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intentEvent = new Intent(FeedActivity.this, EventActivity.class);
                 startActivity(intentEvent);
+                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
+            }
+        });
+
+        ibUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intentUser = new Intent(FeedActivity.this, AccountActivity.class);
+                startActivity(intentUser);
+                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
             }
         });
 
@@ -56,6 +66,8 @@ public class FeedActivity extends AppCompatActivity {
         stories.add(new Story(true, "Tkien"));
         stories.add(new Story(false, "QHai"));
         stories.add(new Story(true, "MSon"));
+        stories.add(new Story(true, "MSon"));
+
 
         StoryAdapter storyAdapter = new StoryAdapter(stories, this);
         storiesBar.setAdapter(storyAdapter);

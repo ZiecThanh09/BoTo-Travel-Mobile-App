@@ -38,8 +38,8 @@ public class TourFragmentTable extends Fragment {
         toursList = view.findViewById(R.id.rcv_tours);
         toursList.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        ItemViewModel itemViewModel = new ViewModelProvider(requireActivity()).get(ItemViewModel.class);
-        itemViewModel.getSelectedItem().observe(requireActivity(), item -> month = item);
+        TourItemViewModel tourItemViewModel = new ViewModelProvider(requireActivity()).get(TourItemViewModel.class);
+        tourItemViewModel.getSelectedItem().observe(requireActivity(), item -> month = item);
 
         tourTableAdapter = new TourAdapterTable(getContext(), tours);
         getSearchData(month);
