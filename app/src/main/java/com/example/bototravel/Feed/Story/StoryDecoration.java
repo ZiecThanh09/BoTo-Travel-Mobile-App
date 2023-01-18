@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Feed.Story;
 
 import android.graphics.Rect;
 import android.view.View;

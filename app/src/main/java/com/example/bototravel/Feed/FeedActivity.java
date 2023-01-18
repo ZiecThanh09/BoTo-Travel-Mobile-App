@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Feed;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -9,6 +9,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.example.bototravel.Account.AccountActivity;
+import com.example.bototravel.Event.EventActivity;
+import com.example.bototravel.R;
+import com.example.bototravel.Feed.Story.Story;
+import com.example.bototravel.Feed.Story.StoryAdapter;
+import com.example.bototravel.Tour.TourActivity;
 
 import java.util.ArrayList;
 import java.util.List;

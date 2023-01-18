@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Tour;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.bototravel.R;
+import com.example.bototravel.Tour.Tour;
+import com.example.bototravel.Tour.TourAdapterCalendar;
 
 import java.util.ArrayList;
 

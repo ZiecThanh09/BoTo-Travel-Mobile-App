@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Tour;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -7,6 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.bototravel.R;
+import com.example.bototravel.Tour.TourSpinnerMode;
 
 public class TourSpinnerModeAdapter extends BaseAdapter {
     Context context;

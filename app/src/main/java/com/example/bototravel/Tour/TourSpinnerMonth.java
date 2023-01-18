@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Tour;
 
 public enum TourSpinnerMonth {
     SpinnerMode1("Tháng 1"),

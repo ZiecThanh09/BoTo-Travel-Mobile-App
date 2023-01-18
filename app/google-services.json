@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1076973687974",
+    "project_id": "boto-travel-chat",
+    "storage_bucket": "boto-travel-chat.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076973687974:android:37bee67c063a25c7229067",
+        "android_client_info": {
+          "package_name": "com.example.bototravel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1076973687974-764o19h5u5d9384rav1qas7lqeqhgnnd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5z7vuId70J-F33mUpQkTvN05Utj_DUhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1076973687974-764o19h5u5d9384rav1qas7lqeqhgnnd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

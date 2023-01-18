@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".FeedActivity">
+    tools:context=".SignIn.SignInActivity">
 
     <ImageView
         android:id="@+id/logo"
@@ -28,15 +28,18 @@
         android:textSize="45sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/username"
+        app:layout_constraintBottom_toTopOf="@id/email"
         android:layout_marginBottom="30dp"/>
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/email"
         android:layout_width="280dp"
         android:layout_height="50dp"
         android:background="@drawable/edit_rectangle_bg"
-        android:hint="Username"
+        android:hint="Email"
+        android:imeOptions="actionNext"
+        android:importantForAutofill="no"
+        android:inputType="text"
         android:fontFamily="@font/inter_regular"
         android:paddingStart="10dp"
         android:textColorHint="@color/hint"
@@ -54,16 +57,18 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/edit_rectangle_bg"
         android:hint="Password"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="textPassword"
         android:fontFamily="@font/inter_regular"
         android:paddingStart="10dp"
         android:paddingEnd="10dp"
         android:textColorHint="@color/hint"
         android:textSize="16sp"
-        android:inputType="textPassword"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/username"
-        android:drawableRight="@drawable/ic_baseline_visibility_off_24"
+        app:layout_constraintTop_toBottomOf="@id/email"
+        android:drawableEnd="@drawable/ic_baseline_visibility_off_24"
         tools:ignore="RtlSymmetry"/>
 
     <RadioButton
@@ -94,31 +99,31 @@
         app:layout_constraintRight_toRightOf="@id/password"
         app:layout_constraintTop_toBottomOf="@id/password" />
 
-    <TextView
+    <FrameLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/notice"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/miss_pass"
-        android:layout_marginTop="12dp"
-        android:text="Sai tài khoản hoặc mật khẩu!"
-        android:fontFamily="@font/inter_regular"
-        android:textSize="14sp"
-        android:textColor="@color/red"
-        android:visibility="invisible"/>
+        android:animateLayoutChanges="true"
+        android:layout_marginTop="30dp">
 
-    <Button
-        android:layout_width="280dp"
-        android:layout_height="50dp"
-        android:id="@+id/sign_in"
-        android:background="@drawable/edit_rectangle_bg"
-        app:backgroundTint="@color/blue_app"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/notice"
-        android:layout_marginTop="30dp"
-        android:text="Đăng nhập"
-        android:fontFamily="@font/inter_bold"
-        android:textSize="16sp"/>
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="280dp"
+            android:layout_height="50dp"
+            android:id="@+id/btn_signIn"
+            android:background="@drawable/edit_rectangle_bg"
+            app:backgroundTint="@color/blue_app"
+            android:text="Đăng nhập"
+            android:fontFamily="@font/inter_bold"
+            android:textSize="16sp"/>
+        
+        <ProgressBar
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:id="@+id/progressBar"
+            android:layout_gravity="center"
+            android:visibility="invisible"/>
+    </FrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

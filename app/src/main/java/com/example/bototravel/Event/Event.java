@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Event;
 
 public class Event {
 

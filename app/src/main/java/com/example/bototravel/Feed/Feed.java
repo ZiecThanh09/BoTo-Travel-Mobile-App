@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Feed;
 
 public class Feed {
 

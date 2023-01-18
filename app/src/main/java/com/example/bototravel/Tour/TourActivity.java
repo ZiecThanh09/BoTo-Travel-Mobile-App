@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Tour;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -12,6 +12,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
+
+import com.example.bototravel.Account.AccountActivity;
+import com.example.bototravel.Event.EventActivity;
+import com.example.bototravel.Feed.FeedActivity;
+import com.example.bototravel.R;
 
 import java.util.Calendar;
 
@@ -38,31 +43,22 @@ public class TourActivity extends AppCompatActivity {
         Spinner snMode = findViewById(R.id.sn_modeView);
 
         // Animation Button
-        ibFeed.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentFeed = new Intent(TourActivity.this, FeedActivity.class);
-                startActivity(intentFeed);
-                overridePendingTransition(R.anim.anim_move_in_left, R.anim.anim_move_out_right);
-            }
+        ibFeed.setOnClickListener(v -> {
+            Intent intentFeed = new Intent(TourActivity.this, FeedActivity.class);
+            startActivity(intentFeed);
+            overridePendingTransition(R.anim.anim_move_in_left, R.anim.anim_move_out_right);
         });
 
-        ibEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentEvent = new Intent(TourActivity.this, EventActivity.class);
-                startActivity(intentEvent);
-                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
-            }
+        ibEvent.setOnClickListener(v -> {
+            Intent intentEvent = new Intent(TourActivity.this, EventActivity.class);
+            startActivity(intentEvent);
+            overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
         });
 
-        ibUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentUser = new Intent(TourActivity.this, AccountActivity.class);
-                startActivity(intentUser);
-                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
-            }
+        ibUser.setOnClickListener(v -> {
+            Intent intentUser = new Intent(TourActivity.this, AccountActivity.class);
+            startActivity(intentUser);
+            overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
         });
 
         // Fragment

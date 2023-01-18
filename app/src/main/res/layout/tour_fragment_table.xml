@@ -7,7 +7,7 @@
     android:paddingTop="15dp"
     android:paddingBottom="15dp"
     android:background="@drawable/edit_item_bg"
-    tools:context=".TourFragmentTable">
+    tools:context=".Tour.TourFragmentTable">
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -1,15 +1,18 @@
-package com.example.bototravel;
+package com.example.bototravel.Event;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.view.View;
 import android.widget.ImageButton;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.bototravel.Account.AccountActivity;
+import com.example.bototravel.Feed.FeedActivity;
+import com.example.bototravel.R;
+import com.example.bototravel.Tour.TourActivity;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Tour;
 
 public enum TourSpinnerMode {
     TableMode1("Bảng"),

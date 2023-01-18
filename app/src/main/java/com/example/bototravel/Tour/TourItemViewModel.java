@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Tour;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

@@ -1,4 +1,4 @@
-package com.example.bototravel;
+package com.example.bototravel.Account;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -11,6 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.bototravel.Event.EventActivity;
+import com.example.bototravel.Feed.FeedActivity;
+import com.example.bototravel.R;
+import com.example.bototravel.Tour.TourActivity;
 import com.google.android.material.tabs.TabLayout;
 
 public class AccountActivity extends AppCompatActivity {
