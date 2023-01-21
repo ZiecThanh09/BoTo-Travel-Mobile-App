@@ -1,4 +1,4 @@
-package com.example.bototravel.Account;
+package com.example.bototravel.User;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -17,11 +17,11 @@ import com.example.bototravel.R;
 import com.example.bototravel.Tour.TourActivity;
 import com.google.android.material.tabs.TabLayout;
 
-public class AccountActivity extends AppCompatActivity {
+public class UserActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.account);
+        setContentView(R.layout.user);
 
         findViewByIds();
     }
@@ -37,7 +37,7 @@ public class AccountActivity extends AppCompatActivity {
         ibFeed.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentFeed = new Intent(AccountActivity.this, FeedActivity.class);
+                Intent intentFeed = new Intent(UserActivity.this, FeedActivity.class);
                 startActivity(intentFeed);
                 overridePendingTransition(R.anim.anim_move_in_left, R.anim.anim_move_out_right);
             }
@@ -46,7 +46,7 @@ public class AccountActivity extends AppCompatActivity {
         ibTour.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentTour = new Intent(AccountActivity.this, TourActivity.class);
+                Intent intentTour = new Intent(UserActivity.this, TourActivity.class);
                 startActivity(intentTour);
                 overridePendingTransition(R.anim.anim_move_in_left, R.anim.anim_move_out_right);
             }
@@ -55,17 +55,17 @@ public class AccountActivity extends AppCompatActivity {
         ibEvent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentEvent = new Intent(AccountActivity.this, EventActivity.class);
+                Intent intentEvent = new Intent(UserActivity.this, EventActivity.class);
                 startActivity(intentEvent);
                 overridePendingTransition(R.anim.anim_move_in_left, R.anim.anim_move_out_right);
             }
         });
 
         // TabLayout and ViewPager
-        AccountAdapterViewPager accountAdapterViewPager = new AccountAdapterViewPager(
+        UserAdapterViewPager userAdapterViewPager = new UserAdapterViewPager(
                 getSupportFragmentManager(),
                 FragmentPagerAdapter.BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT);
-        viewPager.setAdapter(accountAdapterViewPager);
+        viewPager.setAdapter(userAdapterViewPager);
 
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.setSelectedTabIndicatorColor(Color.parseColor("#44ADE5"));

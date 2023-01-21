@@ -13,7 +13,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.bototravel.Account.AccountActivity;
+import com.example.bototravel.User.UserActivity;
 import com.example.bototravel.Event.EventActivity;
 import com.example.bototravel.Feed.FeedActivity;
 import com.example.bototravel.R;
@@ -56,7 +56,7 @@ public class TourActivity extends AppCompatActivity {
         });
 
         ibUser.setOnClickListener(v -> {
-            Intent intentUser = new Intent(TourActivity.this, AccountActivity.class);
+            Intent intentUser = new Intent(TourActivity.this, UserActivity.class);
             startActivity(intentUser);
             overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
         });

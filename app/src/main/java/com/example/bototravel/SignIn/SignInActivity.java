@@ -29,13 +29,13 @@ public class SignInActivity extends AppCompatActivity {
         preferenceManager = new com.example.bototravel.Utilities.PreferenceManager(
                 getApplicationContext());
 
-//        // Nhớ mật khẩu
-//        if (preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
-//            Intent intent = new Intent(getApplicationContext(), FeedActivity.class);
-//            startActivity(intent);
-//            overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
-//            finish();
-//        }
+        // Nhớ mật khẩu
+        if (preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
+            Intent intent = new Intent(getApplicationContext(), FeedActivity.class);
+            startActivity(intent);
+            overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
+            finish();
+        }
 
         setContentView(binding.getRoot());
         setListeners();

@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.bototravel.Account.AccountActivity;
+import com.example.bototravel.User.UserActivity;
 import com.example.bototravel.Feed.FeedActivity;
 import com.example.bototravel.R;
 import com.example.bototravel.Tour.TourActivity;
@@ -54,7 +54,7 @@ public class EventActivity extends AppCompatActivity {
         ibUser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intentUser = new Intent(EventActivity.this, AccountActivity.class);
+                Intent intentUser = new Intent(EventActivity.this, UserActivity.class);
                 startActivity(intentUser);
                 overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
             }

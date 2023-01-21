@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="15dp"
-    android:background="@drawable/edit_item_bg"
-    android:paddingBottom="15dp">
+    android:paddingBottom="15dp"
+    android:background="@drawable/edit_border_bottom_item">
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/img_avt"

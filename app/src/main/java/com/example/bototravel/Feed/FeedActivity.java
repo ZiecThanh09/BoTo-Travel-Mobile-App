@@ -7,10 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageButton;
 
-import com.example.bototravel.Account.AccountActivity;
+import com.example.bototravel.User.UserActivity;
+import com.example.bototravel.Chat.ChatActivity;
 import com.example.bototravel.Event.EventActivity;
 import com.example.bototravel.R;
 import com.example.bototravel.Feed.Story.Story;
@@ -35,37 +35,34 @@ public class FeedActivity extends AppCompatActivity {
         ImageButton ibTour = findViewById(R.id.imgBtn_book);
         ImageButton ibEvent = findViewById(R.id.imgBtn_event);
         ImageButton ibUser = findViewById(R.id.imgBtntn_user);
+        ImageButton ibMessage = findViewById(R.id.imgBtn_messages);
         RecyclerView storiesBar = findViewById(R.id.storiesBar);
         RecyclerView newFeeds = findViewById(R.id.newFeeds);
 
         // Animation Button
-        ibTour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentTour = new Intent(FeedActivity.this, TourActivity.class);
-                startActivity(intentTour);
-                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
-            }
+        ibTour.setOnClickListener(v -> {
+            Intent intentTour = new Intent(FeedActivity.this, TourActivity.class);
+            startActivity(intentTour);
+            overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
         });
 
-        ibEvent.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentEvent = new Intent(FeedActivity.this, EventActivity.class);
-                startActivity(intentEvent);
-                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
-            }
+        ibEvent.setOnClickListener(v -> {
+            Intent intentEvent = new Intent(FeedActivity.this, EventActivity.class);
+            startActivity(intentEvent);
+            overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
         });
 
-        ibUser.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intentUser = new Intent(FeedActivity.this, AccountActivity.class);
-                startActivity(intentUser);
-                overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
-            }
+        ibUser.setOnClickListener(v -> {
+            Intent intentUser = new Intent(FeedActivity.this, UserActivity.class);
+            startActivity(intentUser);
+            overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
         });
 
+        ibMessage.setOnClickListener(v -> {
+            Intent intentMessage = new Intent(FeedActivity.this, ChatActivity.class);
+            startActivity(intentMessage);
+            // overridePendingTransition(R.anim.anim_move_in_right, R.anim.anim_move_out_left);
+        });
 
         // Stories Bar
         List<Story> stories = new ArrayList<>();

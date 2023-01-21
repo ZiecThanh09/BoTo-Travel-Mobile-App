@@ -1,4 +1,4 @@
-package com.example.bototravel.Account;
+package com.example.bototravel.User;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -6,8 +6,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 
-public class AccountAdapterViewPager extends FragmentPagerAdapter {
-    public AccountAdapterViewPager(@NonNull FragmentManager fm, int behavior) {
+public class UserAdapterViewPager extends FragmentPagerAdapter {
+    public UserAdapterViewPager(@NonNull FragmentManager fm, int behavior) {
         super(fm, behavior);
     }
 
@@ -15,9 +15,9 @@ public class AccountAdapterViewPager extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         if (position == 1) {
-            return new AccountFragmentAchievement();
+            return new UserFragmentAchievement();
         }
-        return new AccountFragmentInfo();
+        return new UserFragmentInfo();
     }
 
     @Override
