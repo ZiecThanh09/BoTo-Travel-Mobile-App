@@ -1,6 +1,5 @@
 package com.example.bototravel.Feed;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -9,6 +8,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
 
+import com.example.bototravel.Chat.BaseActivity;
 import com.example.bototravel.User.UserActivity;
 import com.example.bototravel.Chat.ChatActivity;
 import com.example.bototravel.Event.EventActivity;
@@ -20,7 +20,7 @@ import com.example.bototravel.Tour.TourActivity;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedActivity extends AppCompatActivity {
+public class FeedActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

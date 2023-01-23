@@ -15,11 +15,15 @@ import java.util.List;
 public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
     private final List<Chat> chats;
-    private final Bitmap receiverProfileImage;
+    private Bitmap receiverProfileImage;
     private final String senderId;
 
     public static final int VIEW_TYPE_SENT = 1;
     public static final int VIEW_TYPE_RECEIVED = 2;
+
+    public void setReceiverProfileImage(Bitmap bitmap) {
+        receiverProfileImage = bitmap;
+    }
 
     public ChatAdapter(List<Chat> chats, Bitmap receiverProfileImage, String senderId) {
         this.chats = chats;
@@ -80,7 +84,6 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     }
 
     static class ReceivedMessageViewHolder extends RecyclerView.ViewHolder {
-
         private final MessageReceiveDetailedItemBinding binding;
 
         ReceivedMessageViewHolder(MessageReceiveDetailedItemBinding messageReceiveDetailedItemBinding) {
@@ -91,7 +94,9 @@ public class ChatAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
         void setData(Chat chat, Bitmap receiverProfileImage) {
             binding.tvTextMessage.setText(chat.message);
             binding.tvDateTime.setText(chat.dateTime);
-            binding.imgAvt.setImageBitmap(receiverProfileImage);
+            if (receiverProfileImage != null) {
+                binding.imgAvt.setImageBitmap(receiverProfileImage);
+            }
         }
     }
 }

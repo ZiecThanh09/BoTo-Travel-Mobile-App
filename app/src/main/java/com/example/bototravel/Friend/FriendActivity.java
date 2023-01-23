@@ -4,8 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import com.example.bototravel.Chat.BaseActivity;
 import com.example.bototravel.Chat.ChatDetailedActivity;
 import com.example.bototravel.Listeners.FriendListener;
 import com.example.bototravel.Utilities.Constants;
@@ -17,7 +16,7 @@ import com.google.firebase.firestore.QueryDocumentSnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FriendActivity extends AppCompatActivity implements FriendListener {
+public class FriendActivity extends BaseActivity implements FriendListener {
 
     private FriendBinding binding;
     private PreferenceManager preferenceManager;

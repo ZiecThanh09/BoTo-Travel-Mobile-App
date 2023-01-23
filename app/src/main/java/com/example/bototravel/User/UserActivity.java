@@ -7,17 +7,17 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.bototravel.Chat.BaseActivity;
 import com.example.bototravel.Event.EventActivity;
 import com.example.bototravel.Feed.FeedActivity;
 import com.example.bototravel.R;
 import com.example.bototravel.Tour.TourActivity;
 import com.google.android.material.tabs.TabLayout;
 
-public class UserActivity extends AppCompatActivity {
+public class UserActivity extends BaseActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

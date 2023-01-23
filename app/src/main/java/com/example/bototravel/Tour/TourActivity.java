@@ -8,11 +8,11 @@ import android.widget.ImageButton;
 import android.widget.AdapterView;
 import android.widget.Spinner;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.bototravel.Chat.BaseActivity;
 import com.example.bototravel.User.UserActivity;
 import com.example.bototravel.Event.EventActivity;
 import com.example.bototravel.Feed.FeedActivity;
@@ -20,7 +20,7 @@ import com.example.bototravel.R;
 
 import java.util.Calendar;
 
-public class TourActivity extends AppCompatActivity {
+public class TourActivity extends BaseActivity {
     private int month;
     private TourItemViewModel tourItemViewModel;
 
