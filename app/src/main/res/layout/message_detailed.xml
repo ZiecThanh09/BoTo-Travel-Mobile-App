@@ -22,7 +22,7 @@
         <ImageView
             android:id="@+id/img_avt"
             android:layout_width="48dp"
-            android:layout_height="wrap_content"
+            android:layout_height="48dp"
             android:layout_marginStart="15dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
@@ -38,36 +38,24 @@
             android:layout_marginStart="15dp"
             android:text="Trần Triệu Thiên"
             android:textColor="@color/black"
+            android:textSize="@dimen/_13ssp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/img_avt"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="@id/img_avt"
+            app:layout_constraintBottom_toBottomOf="@id/img_avt"/>
 
         <ImageView
             android:id="@+id/img_Status"
             android:layout_width="9dp"
-            android:layout_height="8dp"
+            android:layout_height="9dp"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
             android:src="@drawable/img_online"
-            app:layout_constraintTop_toBottomOf="@id/tv_username"
-            app:layout_constraintStart_toStartOf="@id/tv_username"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_username"
+            app:layout_constraintStart_toEndOf="@id/tv_username"
+            app:layout_constraintBottom_toBottomOf="@id/tv_username"
+            android:layout_marginStart="@dimen/_5sdp"
             android:visibility="gone"/>
-
-        <TextView
-            android:id="@+id/tv_status"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:layout_marginBottom="1dp"
-            android:fontFamily="@font/inter_regular"
-            android:text="Đang hoạt động"
-            android:textSize="@dimen/_8ssp"
-            android:textColor="@color/blue_app"
-            android:visibility="gone"
-            app:layout_constraintStart_toEndOf="@+id/img_Status"
-            app:layout_constraintTop_toBottomOf="@id/tv_username"
-            app:layout_constraintBottom_toBottomOf="parent"/>
 
         <LinearLayout
             android:id="@+id/toolBar"

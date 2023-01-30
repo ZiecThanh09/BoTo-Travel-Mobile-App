@@ -171,20 +171,16 @@ public class ChatDetailedActivity extends BaseActivity {
                             isReceiverAvailable = availability == 1;
                         }
                         receiverFriend.token = value.getString(Constants.KEY_FCM_TOKEN);
-                        if (receiverFriend.image == null || receiverFriend.name == null) {
+                        if (receiverFriend.image == null) {
                             receiverFriend.image = value.getString(Constants.KEY_IMAGE);
-                            receiverFriend.name = value.getString(Constants.KEY_NAME);
                             chatAdapter.setReceiverProfileImage(getBitmapFromEncodedString(receiverFriend.image));
                             chatAdapter.notifyItemRangeChanged(0, chats.size());
                         }
                     }
                     if (isReceiverAvailable) {
                         binding.imgStatus.setVisibility(View.VISIBLE);
-                        binding.tvStatus.setVisibility(View.VISIBLE);
-                        binding.tvStatus.setText("Đang hoạt động");
                     } else {
                         binding.imgStatus.setVisibility(View.GONE);
-                        binding.tvStatus.setVisibility(View.GONE);
                     }
                 });
     }

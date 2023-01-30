@@ -7,7 +7,7 @@
     android:padding="@dimen/_4sdp">
 
     <TextView
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv_textMessage"
         android:background="@drawable/edit_cycle_bg"
@@ -29,11 +29,11 @@
         android:layout_height="wrap_content"
         android:id="@+id/tv_dateTime"
         android:layout_marginBottom="@dimen/_4sdp"
-        android:textColor="@color/light_grey"
+        android:textColor="@color/grey"
         android:textSize="@dimen/_8ssp"
         android:fontFamily="@font/inter_regular"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/tv_textMessage"/>
+        app:layout_constraintTop_toBottomOf="@id/tv_textMessage"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
