@@ -3,9 +3,11 @@ package com.example.bototravel.Friend;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.bototravel.Chat.BaseActivity;
 import com.example.bototravel.Chat.ChatDetailedActivity;
+import com.example.bototravel.Chat.Meeting.OutgoingInvitationActivity;
 import com.example.bototravel.Listeners.FriendListener;
 import com.example.bototravel.Utilities.Constants;
 import com.example.bototravel.Utilities.PreferenceManager;
@@ -88,5 +90,38 @@ public class FriendActivity extends BaseActivity implements FriendListener {
         intent.putExtra(Constants.KEY_FRIEND, friend);
         startActivity(intent);
         finish();
+    }
+
+    @Override
+    public void initiateVideoMeeting(Friend friend) {
+        if (friend.token == null || friend.token.trim().isEmpty()) {
+            Toast.makeText(
+                    this,
+                    friend.name + " is not available for meeting",
+                    Toast.LENGTH_SHORT
+            ).show();
+        } else {
+            Intent intent = new Intent(getApplicationContext(), OutgoingInvitationActivity.class);
+            intent.putExtra(Constants.KEY_FRIEND, friend);
+            intent.putExtra("type", "video");
+            startActivity(intent);
+        }
+    }
+
+    @Override
+    public void initiateAudioMeeting(Friend friend) {
+        if (friend.token == null || friend.token.trim().isEmpty()) {
+            Toast.makeText(
+                    this,
+                    friend.name + " is not available for meeting",
+                    Toast.LENGTH_SHORT
+            ).show();
+        } else {
+            Toast.makeText(
+                    this,
+                    "Audio meeting with " + friend.name,
+                    Toast.LENGTH_SHORT
+            ).show();
+        }
     }
 }

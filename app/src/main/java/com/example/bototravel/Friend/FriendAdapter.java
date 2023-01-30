@@ -4,7 +4,9 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Base64;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -55,11 +57,17 @@ public class FriendAdapter extends RecyclerView.Adapter<FriendAdapter.FriendView
             binding.tvEmail.setText(friend.email);
             binding.imgAvt.setImageBitmap(getFriendUserImage(friend.image));
             binding.getRoot().setOnClickListener(v -> friendListener.onFriendClicked(friend));
+            binding.imgBtnCall.setOnClickListener(v -> friendListener.initiateAudioMeeting(friend));
+            binding.imgBtnVideoCall.setOnClickListener(v -> friendListener.initiateVideoMeeting(friend));
         }
     }
 
     private Bitmap getFriendUserImage(String encodedImage) {
-        byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
-        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        if (encodedImage != null) {
+            byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        } else {
+            return null;
+        }
     }
 }

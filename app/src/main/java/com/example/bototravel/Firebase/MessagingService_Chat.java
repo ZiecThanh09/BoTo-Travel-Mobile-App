@@ -1,13 +1,13 @@
 package com.example.bototravel.Firebase;
 
 import android.Manifest;
-import android.annotation.SuppressLint;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -23,11 +23,12 @@ import com.google.firebase.messaging.RemoteMessage;
 
 import java.util.Random;
 
-public class MessagingService extends FirebaseMessagingService {
+public class MessagingService_Chat extends FirebaseMessagingService {
 
     @Override
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
+        Log.d("FCM", "Token: " + token);
     }
 
     @Override

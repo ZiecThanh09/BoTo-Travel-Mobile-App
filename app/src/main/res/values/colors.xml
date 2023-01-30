@@ -18,4 +18,5 @@
     <color name="btn_follow">#ECECEC</color>
     <color name="header">#D0D2D4</color>
     <color name="background">#F8F8FB</color>
+    <color name="green_light">#98bb00</color>
 </resources>
