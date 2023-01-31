@@ -43,8 +43,7 @@
             android:id="@+id/img_avt"
             android:scaleType="centerCrop"
             android:src="@drawable/ic_launcher_foreground"
-            app:riv_oval="true"
-            />
+            app:riv_oval="true"/>
 
         <TextView
             android:layout_width="match_parent"

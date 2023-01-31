@@ -117,11 +117,10 @@ public class FriendActivity extends BaseActivity implements FriendListener {
                     Toast.LENGTH_SHORT
             ).show();
         } else {
-            Toast.makeText(
-                    this,
-                    "Audio meeting with " + friend.name,
-                    Toast.LENGTH_SHORT
-            ).show();
+            Intent intent = new Intent(getApplicationContext(), OutgoingInvitationActivity.class);
+            intent.putExtra(Constants.KEY_FRIEND, friend);
+            intent.putExtra("type", "audio");
+            startActivity(intent);
         }
     }
 }

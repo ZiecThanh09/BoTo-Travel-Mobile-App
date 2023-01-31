@@ -10,7 +10,7 @@ android {
     defaultConfig {
         applicationId "com.example.bototravel"
         minSdk 21
-        targetSdk 33
+        targetSdk 30
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
@@ -67,4 +67,7 @@ dependencies {
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-scalars:2.9.0'
+
+    // Jitsi Meet
+    implementation ('org.jitsi.react:jitsi-meet-sdk:2.8.2') { transitive = true }
 }

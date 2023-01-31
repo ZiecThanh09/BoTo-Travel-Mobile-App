@@ -33,6 +33,7 @@
         </activity>
         <activity
             android:name=".Chat.ChatDetailedActivity"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".Chat.ChatActivity"
@@ -90,14 +91,7 @@
         </activity>
 
         <service
-            android:name=".Firebase.MessagingService_Chat"
-            android:exported="false">
-            <intent-filter>
-                <action android:name="com.google.firebase.MESSAGING_EVENT" />
-            </intent-filter>
-        </service>
-        <service
-            android:name=".Firebase.MessagingService_Call"
+            android:name=".Firebase.MessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
