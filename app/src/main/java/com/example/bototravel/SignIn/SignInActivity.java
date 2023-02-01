@@ -65,6 +65,8 @@ public class SignInActivity extends AppCompatActivity {
                                 documentSnapshot.getId());
                         preferenceManager.putString(Constants.KEY_NAME,
                                 documentSnapshot.getString(Constants.KEY_NAME));
+                        preferenceManager.putString(Constants.KEY_EMAIL,
+                                documentSnapshot.getString(Constants.KEY_EMAIL));
                         preferenceManager.putString(Constants.KEY_IMAGE,
                                 documentSnapshot.getString(Constants.KEY_IMAGE));
                         Intent intent = new Intent(getApplicationContext(), FeedActivity.class);

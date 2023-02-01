@@ -42,14 +42,11 @@ public class MessagingService extends FirebaseMessagingService {
                         Constants.REMOTE_MSG_MEETING_TYPE,
                         message.getData().get(Constants.REMOTE_MSG_MEETING_TYPE)
                 );
-                intent.putExtra(
-                        Constants.KEY_IMAGE,
-                        message.getData().get(Constants.KEY_IMAGE)
-                );
-                intent.putExtra(
-                        Constants.KEY_NAME,
-                        message.getData().get(Constants.KEY_NAME)
-                );
+                Friend friend = new Friend();
+                friend.id = message.getData().get(Constants.KEY_USER_ID);
+                friend.name = message.getData().get(Constants.KEY_NAME);
+                friend.email = message.getData().get(Constants.KEY_EMAIL);
+                intent.putExtra(Constants.KEY_FRIEND, friend);
                 intent.putExtra(
                         Constants.REMOTE_MSG_INVITER_TOKEN,
                         message.getData().get(Constants.REMOTE_MSG_INVITER_TOKEN)
@@ -72,6 +69,7 @@ public class MessagingService extends FirebaseMessagingService {
             Friend friend = new Friend();
             friend.id = message.getData().get(Constants.KEY_USER_ID);
             friend.name = message.getData().get(Constants.KEY_NAME);
+            friend.email = message.getData().get(Constants.KEY_EMAIL);
             friend.token = message.getData().get(Constants.KEY_FCM_TOKEN);
 
             int notificationId = new Random().nextInt();

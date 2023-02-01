@@ -29,6 +29,7 @@ import org.jitsi.meet.sdk.JitsiMeetActivity;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
 import org.json.JSONArray;
 import org.json.JSONObject;
+import org.w3c.dom.Text;
 
 import java.net.URL;
 import java.util.UUID;
@@ -65,11 +66,13 @@ public class OutgoingInvitationActivity extends AppCompatActivity {
 
         ImageView imgAvatar = findViewById(R.id.img_avt);
         TextView tvUserName = findViewById(R.id.tv_userName);
+        TextView tvEmail = findViewById(R.id.tv_email);
 
         Friend friend = (Friend) getIntent().getSerializableExtra(Constants.KEY_FRIEND);
         if (friend != null) {
             imgAvatar.setImageBitmap(getFriendUserImage(friend.image));
-            tvUserName.setText(String.format("%s", friend.name));
+            tvUserName.setText(String.valueOf(friend.name));
+            tvEmail.setText(String.valueOf(friend.email));
         }
 
         ImageButton imgBtnStopInvitation = findViewById(R.id.imgBtn_reject);
@@ -108,8 +111,9 @@ public class OutgoingInvitationActivity extends AppCompatActivity {
 
             data.put(Constants.REMOTE_MSG_TYPE, Constants.REMOTE_MSG_INVITATION);
             data.put(Constants.REMOTE_MSG_MEETING_TYPE, meetingType);
-            data.put(Constants.KEY_IMAGE, preferenceManager.getString(Constants.KEY_IMAGE));
+            data.put(Constants.KEY_USER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
             data.put(Constants.KEY_NAME, preferenceManager.getString(Constants.KEY_NAME));
+            data.put(Constants.KEY_EMAIL, preferenceManager.getString(Constants.KEY_EMAIL));
             data.put(Constants.REMOTE_MSG_INVITER_TOKEN, inviterToken);
 
             meetingRoom = preferenceManager.getString(Constants.KEY_USER_ID) + "_" +

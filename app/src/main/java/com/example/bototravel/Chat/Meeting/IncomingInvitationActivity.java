@@ -17,10 +17,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.bototravel.Friend.Friend;
 import com.example.bototravel.Network.ApiClient;
 import com.example.bototravel.Network.ApiService;
 import com.example.bototravel.R;
 import com.example.bototravel.Utilities.Constants;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.jitsi.meet.sdk.JitsiMeetActivity;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
@@ -34,13 +37,15 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 public class IncomingInvitationActivity extends AppCompatActivity {
-
     private String meetingType = null;
+    private Friend receiverFriend;
+    private FirebaseFirestore database;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.meeting_incoming_invitation);
+        database = FirebaseFirestore.getInstance();
 
         ImageView imgMeetingType = findViewById(R.id.imgMeetingType);
         meetingType = getIntent().getStringExtra(Constants.REMOTE_MSG_MEETING_TYPE);
@@ -55,10 +60,13 @@ public class IncomingInvitationActivity extends AppCompatActivity {
 
         ImageView imgAvatar = findViewById(R.id.img_avt);
         TextView tvUserName = findViewById(R.id.tv_userName);
+        TextView tvEmail = findViewById(R.id.tv_email);
 
-        String image = getIntent().getStringExtra(Constants.KEY_IMAGE);
-        imgAvatar.setImageBitmap(getFriendUserImage(image));
-        tvUserName.setText(getIntent().getStringExtra(Constants.KEY_NAME));
+        receiverFriend = (Friend) getIntent().getSerializableExtra(Constants.KEY_FRIEND);
+        getReceiverAvatar(imgAvatar);
+
+        tvUserName.setText(receiverFriend.name);
+        tvEmail.setText(receiverFriend.email);
 
         ImageButton imgAcceptInvitation = findViewById(R.id.imgBtn_accept);
         imgAcceptInvitation.setOnClickListener(v -> sendInvitationResponse(
@@ -71,6 +79,21 @@ public class IncomingInvitationActivity extends AppCompatActivity {
                 Constants.REMOTE_MSG_INVITATION_REJECTED,
                 getIntent().getStringExtra(Constants.REMOTE_MSG_INVITER_TOKEN)
         ));
+    }
+
+    private void getReceiverAvatar(ImageView imgAvatar) {
+        database.collection(Constants.KEY_COLLECTION_USERS).document(receiverFriend.id)
+                .addSnapshotListener(IncomingInvitationActivity.this, ((value, error) -> {
+                    if (error != null) {
+                        return;
+                    }
+                    if (value != null) {
+                        if (receiverFriend.image == null) {
+                            receiverFriend.image = value.getString(Constants.KEY_IMAGE);
+                            imgAvatar.setImageBitmap(getFriendUserImage(receiverFriend.image));
+                        }
+                    }
+                }));
     }
 
     private Bitmap getFriendUserImage(String encodedImage) {
