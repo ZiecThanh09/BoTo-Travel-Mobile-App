@@ -3,6 +3,7 @@ package com.example.bototravel.Chat;
 import android.annotation.SuppressLint;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Base64;
 import android.view.View;
@@ -32,6 +33,7 @@ import org.json.JSONObject;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -217,7 +219,9 @@ public class ChatDetailedActivity extends BaseActivity {
                     chats.add(chat);
                 }
             }
-            Collections.sort(chats, (obj1, obj2) -> obj1.dateObject.compareTo(obj2.dateObject));
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+                Collections.sort(chats, Comparator.comparing(obj -> obj.dateObject));
+            }
             if (count == 0) {
                 chatAdapter.notifyDataSetChanged();
             } else {

@@ -23,7 +23,6 @@ import com.example.bototravel.Network.ApiService;
 import com.example.bototravel.R;
 import com.example.bototravel.Utilities.Constants;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.makeramen.roundedimageview.RoundedImageView;
 
 import org.jitsi.meet.sdk.JitsiMeetActivity;
 import org.jitsi.meet.sdk.JitsiMeetConferenceOptions;
