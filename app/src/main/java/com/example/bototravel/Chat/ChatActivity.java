@@ -61,9 +61,8 @@ public class ChatActivity extends BaseActivity implements ConversionListener {
 
     private void setListeners() {
         binding.imgBtnLogo.setOnClickListener(v -> signOut());
-        binding.btnUsers.setOnClickListener(v -> {
-            startActivity(new Intent(getApplicationContext(), FriendActivity.class));
-        });
+        binding.btnUsers.setOnClickListener(v -> startActivity(
+                new Intent(getApplicationContext(), FriendActivity.class)));
     }
 
     private void loadUserDetails() {
@@ -103,10 +102,12 @@ public class ChatActivity extends BaseActivity implements ConversionListener {
                         chat.conversionImage = documentChange.getDocument().getString(Constants.KEY_RECEIVER_IMAGE);
                         chat.conversionName = documentChange.getDocument().getString(Constants.KEY_RECEIVER_NAME);
                         chat.conversionId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
+                        chat.conversionEmail = documentChange.getDocument().getString(Constants.KEY_RECEIVER_EMAIL);
                     } else {
                         chat.conversionImage = documentChange.getDocument().getString(Constants.KEY_SENDER_IMAGE);
                         chat.conversionName = documentChange.getDocument().getString(Constants.KEY_SENDER_NAME);
                         chat.conversionId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
+                        chat.conversionEmail = documentChange.getDocument().getString(Constants.KEY_SENDER_EMAIL);
                     }
                     chat.message = documentChange.getDocument().getString(Constants.KEY_LAST_MESSAGE);
                     chat.dateObject = documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP);

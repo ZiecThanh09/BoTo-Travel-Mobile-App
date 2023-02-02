@@ -1,6 +1,7 @@
 package com.example.bototravel.Chat;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.bototravel.Chat.Meeting.OutgoingInvitationActivity;
 import com.example.bototravel.Friend.Friend;
 import com.example.bototravel.Network.ApiClient;
 import com.example.bototravel.Network.ApiService;
@@ -59,8 +61,8 @@ public class ChatDetailedActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         binding = MessageDetailedBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        setListeners();
         loadReceiverDetails();
+        setListeners();
         init();
         listenMessages();
     }
@@ -82,6 +84,7 @@ public class ChatDetailedActivity extends BaseActivity {
         message.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
         message.put(Constants.KEY_RECEIVER_ID, receiverFriend.id);
         message.put(Constants.KEY_MESSAGE, binding.etTextMessage.getText().toString());
+        message.put(Constants.KEY_EMAIL, receiverFriend.email);
         message.put(Constants.KEY_TIMESTAMP, new Date());
         database.collection(Constants.KEY_COLLECTION_CHAT).add(message);
         if (conversionId != null) {
@@ -91,9 +94,11 @@ public class ChatDetailedActivity extends BaseActivity {
             conversion.put(Constants.KEY_SENDER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
             conversion.put(Constants.KEY_SENDER_NAME, preferenceManager.getString(Constants.KEY_NAME));
             conversion.put(Constants.KEY_SENDER_IMAGE, preferenceManager.getString(Constants.KEY_IMAGE));
+            conversion.put(Constants.KEY_SENDER_EMAIL, preferenceManager.getString(Constants.KEY_EMAIL));
             conversion.put(Constants.KEY_RECEIVER_ID, receiverFriend.id);
             conversion.put(Constants.KEY_RECEIVER_NAME, receiverFriend.name);
             conversion.put(Constants.KEY_RECEIVER_IMAGE, receiverFriend.image);
+            conversion.put(Constants.KEY_RECEIVER_EMAIL, receiverFriend.email);
             conversion.put(Constants.KEY_LAST_MESSAGE, binding.etTextMessage.getText().toString());
             conversion.put(Constants.KEY_TIMESTAMP, new Date());
             addConversion(conversion);
@@ -106,6 +111,7 @@ public class ChatDetailedActivity extends BaseActivity {
                 JSONObject data = new JSONObject();
                 data.put(Constants.KEY_USER_ID, preferenceManager.getString(Constants.KEY_USER_ID));
                 data.put(Constants.KEY_NAME, preferenceManager.getString(Constants.KEY_NAME));
+                data.put(Constants.KEY_EMAIL, preferenceManager.getString(Constants.KEY_EMAIL));
                 data.put(Constants.KEY_FCM_TOKEN, preferenceManager.getString(Constants.KEY_FCM_TOKEN));
                 data.put(Constants.KEY_MESSAGE, binding.etTextMessage.getText().toString());
 
@@ -173,6 +179,7 @@ public class ChatDetailedActivity extends BaseActivity {
                             isReceiverAvailable = availability == 1;
                         }
                         receiverFriend.token = value.getString(Constants.KEY_FCM_TOKEN);
+                        receiverFriend.email = value.getString(Constants.KEY_EMAIL);
                         if (receiverFriend.image == null) {
                             receiverFriend.image = value.getString(Constants.KEY_IMAGE);
                             chatAdapter.setReceiverProfileImage(getBitmapFromEncodedString(receiverFriend.image));
@@ -213,6 +220,7 @@ public class ChatDetailedActivity extends BaseActivity {
                     chat.senderId = documentChange.getDocument().getString(Constants.KEY_SENDER_ID);
                     chat.receiverId = documentChange.getDocument().getString(Constants.KEY_RECEIVER_ID);
                     chat.message = documentChange.getDocument().getString(Constants.KEY_MESSAGE);
+                    chat.email = documentChange.getDocument().getString(Constants.KEY_EMAIL);
                     chat.dateTime = getReadableDateTime(
                             documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP));
                     chat.dateObject = documentChange.getDocument().getDate(Constants.KEY_TIMESTAMP);
@@ -248,11 +256,45 @@ public class ChatDetailedActivity extends BaseActivity {
     private void loadReceiverDetails() {
         receiverFriend = (Friend) getIntent().getSerializableExtra(Constants.KEY_FRIEND);
         binding.tvUsername.setText(receiverFriend.name);
+        binding.imgAvt.setImageBitmap(getBitmapFromEncodedString(receiverFriend.image));
+        binding.tvEmail.setText(receiverFriend.email);
     }
 
     private void setListeners() {
         binding.imgBtnBack.setOnClickListener(v -> onBackPressed());
         binding.imgBtnSend.setOnClickListener(v -> sendMessage());
+        binding.imgBtnCall.setOnClickListener(v -> startAudioMeeting(receiverFriend));
+        binding.imgBtnVideoCall.setOnClickListener(v -> startVideoMeeting(receiverFriend));
+    }
+
+    private void startVideoMeeting(Friend friend) {
+        if (friend.token == null || friend.token.trim().isEmpty()) {
+            Toast.makeText(
+                    this,
+                    friend.name + " is not available for meeting",
+                    Toast.LENGTH_SHORT
+            ).show();
+        } else {
+            Intent intent = new Intent(getApplicationContext(), OutgoingInvitationActivity.class);
+            intent.putExtra(Constants.KEY_FRIEND, friend);
+            intent.putExtra("type", "video");
+            startActivity(intent);
+        }
+    }
+
+    private void startAudioMeeting(Friend friend) {
+        if (friend.token == null || friend.token.trim().isEmpty()) {
+            Toast.makeText(
+                    this,
+                    friend.name + " is not available for meeting",
+                    Toast.LENGTH_SHORT
+            ).show();
+        } else {
+            Intent intent = new Intent(getApplicationContext(), OutgoingInvitationActivity.class);
+            intent.putExtra(Constants.KEY_FRIEND, friend);
+            intent.putExtra("type", "audio");
+            startActivity(intent);
+        }
     }
 
     private String getReadableDateTime(Date date) {

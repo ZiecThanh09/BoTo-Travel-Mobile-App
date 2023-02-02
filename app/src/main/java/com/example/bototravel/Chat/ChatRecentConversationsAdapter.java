@@ -59,13 +59,18 @@ public class ChatRecentConversationsAdapter extends RecyclerView.Adapter<ChatRec
                 friend.id = chat.conversionId;
                 friend.name = chat.conversionName;
                 friend.image = chat.conversionImage;
+                friend.email = chat.conversionEmail;
                 conversionListener.onConversionClicked(friend);
             });
         }
     }
 
     private Bitmap getConversionImage(String encodedImage) {
-        byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
-        return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        if (encodedImage != null) {
+            byte[] bytes = Base64.decode(encodedImage, Base64.DEFAULT);
+            return BitmapFactory.decodeByteArray(bytes, 0, bytes.length);
+        } else {
+            return null;
+        }
     }
 }
