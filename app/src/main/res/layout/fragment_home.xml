@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:clickable="true"
+    tools:context="com.marsad.BoToTravel.fragments.Home">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/white"
+        android:elevation="2dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/imgBtn_logo"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="7dp"
+                android:background="@drawable/edit_shadow_cycle_bg"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_logo"
+                android:layout_alignParentLeft="true"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="230dp"
+                android:layout_height="55dp"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/edit_shadow_rectangle_bg"
+                android:drawableStart="@drawable/ic_baseline_search_24"
+                android:elevation="4dp"
+                android:fontFamily="@font/inter_regular"
+                android:hint="Tìm kiếm trên BoTo"
+                android:paddingStart="15dp"
+                android:textColorHint="@color/hint"
+                android:textSize="15sp"
+                android:inputType="text"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/sendBtn"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="7dp"
+                android:background="@drawable/edit_shadow_cycle_bg"
+                android:padding="8dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/img_messages"
+                android:layout_alignParentRight="true"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/storiesRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/storiesRecyclerView" />
+
+</RelativeLayout>
