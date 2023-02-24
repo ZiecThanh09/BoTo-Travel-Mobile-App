@@ -26,8 +26,8 @@
 
             <EditText
                 android:id="@+id/et_search"
-                android:layout_width="339dp"
-                android:layout_height="55dp"
+                android:layout_width="332dp"
+                android:layout_height="match_parent"
                 android:background="@drawable/edit_shadow_rectangle_bg"
                 android:drawableStart="@drawable/ic_baseline_search_24"
                 android:elevation="4dp"
@@ -64,7 +64,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_below="@id/storiesRecyclerView" />
 
 </RelativeLayout>
