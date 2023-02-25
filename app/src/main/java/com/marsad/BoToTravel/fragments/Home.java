@@ -265,6 +265,8 @@ public class Home extends Fragment {
             if (value == null)
                 return;
 
+            storiesModelList.clear();
+
             for (QueryDocumentSnapshot snapshot : value) {
 
                 if (!value.isEmpty()) {

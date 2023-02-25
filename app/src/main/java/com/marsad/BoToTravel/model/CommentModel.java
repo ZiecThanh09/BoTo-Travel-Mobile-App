@@ -1,8 +1,13 @@
 package com.marsad.BoToTravel.model;
 
+import com.google.firebase.firestore.ServerTimestamp;
+
+import java.util.Date;
+
 public class CommentModel {
 
     String comment, commentID, postID, uid, name, profileImageUrl;
+
 
     public CommentModel() {
     }
@@ -63,4 +68,6 @@ public class CommentModel {
     public void setProfileImageUrl(String profileImageUrl) {
         this.profileImageUrl = profileImageUrl;
     }
+
+
 }

@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -18,12 +19,16 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.Query;
 import com.marsad.BoToTravel.adapter.CommentAdapter;
 import com.marsad.BoToTravel.model.CommentModel;
 import com.marsad.catchy.R;
 
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -57,11 +62,6 @@ public class Comment extends Fragment {
 
         init(view);
 
-        reference = FirebaseFirestore.getInstance().collection("Users")
-                .document(uid)
-                .collection("Post Images")
-                .document(id)
-                .collection("Comments");
 
         loadCommentData();
 
@@ -92,6 +92,8 @@ public class Comment extends Fragment {
 
             map.put("name", user.getDisplayName());
             map.put("profileImageUrl", user.getPhotoUrl().toString());
+            map.put("time", FieldValue.serverTimestamp());
+
 
             reference.document(commentID)
                     .set(map)
@@ -117,7 +119,20 @@ public class Comment extends Fragment {
 
     private void loadCommentData() {
 
-        reference.addSnapshotListener((value, error) -> {
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        list = new ArrayList<>();
+
+        reference = FirebaseFirestore.getInstance().collection("Users")
+                .document(uid)
+                .collection("Post Images")
+                .document(id)
+                .collection("Comments");
+
+
+        reference
+                .orderBy("time", Query.Direction.ASCENDING)
+                .addSnapshotListener((value, error) -> {
 
             if (error != null)
                 return;
@@ -127,13 +142,17 @@ public class Comment extends Fragment {
                 return;
             }
 
+            list.clear();
+
             for (DocumentSnapshot snapshot : value) {
 
                 CommentModel model = snapshot.toObject(CommentModel.class);
                 list.add(model);
+                commentAdapter = new CommentAdapter(getContext(), list);
+                recyclerView.setAdapter(commentAdapter);
 
             }
-            commentAdapter.notifyDataSetChanged();
+            //commentAdapter.notifyDataSetChanged();
 
         });
 
@@ -145,13 +164,8 @@ public class Comment extends Fragment {
         sendBtn = view.findViewById(R.id.sendBtn);
         recyclerView = view.findViewById(R.id.commentRecyclerView);
 
+
         user = FirebaseAuth.getInstance().getCurrentUser();
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-
-        list = new ArrayList<>();
-        commentAdapter = new CommentAdapter(getContext(), list);
-        recyclerView.setAdapter(commentAdapter);
 
         if (getArguments() == null)
             return;

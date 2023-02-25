@@ -13,7 +13,9 @@ import com.bumptech.glide.Glide;
 import com.marsad.BoToTravel.model.CommentModel;
 import com.marsad.catchy.R;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.Locale;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -46,7 +48,6 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentH
 
         holder.nameTv.setText(list.get(position).getName());
         holder.commentTv.setText(list.get(position).getComment());
-
     }
 
     @Override
