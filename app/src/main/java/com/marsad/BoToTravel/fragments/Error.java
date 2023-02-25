@@ -7,8 +7,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.auth.User;
 import com.marsad.catchy.R;
 
 public class Error extends AppCompatActivity {
@@ -20,12 +24,14 @@ public class Error extends AppCompatActivity {
         setContentView(R.layout.fragment_error);
         error = findViewById(R.id.editTextTextPersonName);
         send = findViewById(R.id.send_error);
+        FirebaseUser user= FirebaseAuth.getInstance().getCurrentUser();
         send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Write a message to the database
                 FirebaseDatabase database = FirebaseDatabase.getInstance();
-                String url="Báo lỗi/Chi tiết" ;
+                assert user != null;
+                String url="Báo lỗi/" + user.getUid();
                 DatabaseReference myRef = database.getReference(url);
 
                 myRef.setValue(error.getText().toString());
