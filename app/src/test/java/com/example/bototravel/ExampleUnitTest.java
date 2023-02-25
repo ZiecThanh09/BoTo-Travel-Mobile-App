@@ -1,4 +1,4 @@
-package com.example.boto_travel_app;
+package com.example.bototravel;
 
 import org.junit.Test;
 

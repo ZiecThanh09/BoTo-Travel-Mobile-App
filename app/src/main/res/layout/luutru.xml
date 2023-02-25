@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.bototravel.MainActivity"
-    android:orientation="vertical"
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,7 +12,11 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
+            <Button
+                android:id="@+id/btngetdata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Get Data" />
         </LinearLayout>
 
         <LinearLayout
@@ -81,6 +82,7 @@
                 android:layout_height="wrap_content"
                 android:text="" />
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -99,7 +101,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             >
             <TextView
                 android:id="@+id/tv6"
@@ -111,77 +113,20 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="" />
-
-
-
         </LinearLayout>
-
     </LinearLayout>
+
+
+
     <Button
-        android:layout_width="128dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:id="@+id/btndat"
-        android:text="Đặt Tour "
-        >
+        android:text="Xem Danh Sách Tour"
+        android:id="@+id/btnxemds">
 
     </Button>
-    <LinearLayout
+    <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-
-        >
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Điểm đi"
-            android:id="@+id/nhapdiemdi"
-            ></EditText>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Điểm đến"
-            android:id="@+id/nhapdiemden"
-            ></EditText>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Ngày đi"
-            android:id="@+id/nhapngaydi"
-            ></EditText>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Ngày về "
-            android:id="@+id/nhapngayve"
-            ></EditText>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:text="Giá"
-            android:id="@+id/nhapgia"
-            ></EditText>
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Đăng tour"
-            android:id="@+id/btndangtour"
-        ></Button>
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Xem Danh Sách Tour"
-            android:id="@+id/btnxemds"></Button>
-        <ListView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/listview"></ListView>
-    </LinearLayout>
-</LinearLayout>
+        android:id="@+id/listview"></ListView>
+</androidx.appcompat.widget.LinearLayoutCompat>
