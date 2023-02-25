@@ -2,6 +2,9 @@ package com.marsad.BoToTravel.chat;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -24,7 +27,7 @@ public class ChatUsersActivity extends AppCompatActivity {
     ChatUserAdapter adapter;
     List<ChatUserModel> list;
     FirebaseUser user;
-
+    ImageButton error;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,7 +38,14 @@ public class ChatUsersActivity extends AppCompatActivity {
         fetchUserData();
 
         clickListener();
-
+        error=findViewById(R.id.error123);
+        error.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(ChatUsersActivity.this,com.marsad.BoToTravel.fragments.Error.class);
+                startActivity(intent);
+            }
+        });
     }
 
     void init() {
